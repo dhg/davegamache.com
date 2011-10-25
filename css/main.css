@@ -1,0 +1,259 @@
+/* # Reset & Basics (Inspired by E. Meyers)
+================================================== */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, ins, s, small, strike, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+body {
+  line-height: 1; }
+ol, ul {
+  list-style: none; }
+
+/* Basic Styles
+================================================== */
+body {
+  font: 16px/28px ff-meta-serif-web-pro, "Georgia", serif;
+  color: #333;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Typography
+================================================== */
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1 { font-size: 40px; line-height: 40px; }
+/*h2 { font-size: 21px; line-height: 26px; }
+h3 { font-size: 18px; line-height: 26px; }
+h4 { font-size: 18px; line-height: 26px; font-style: italic; font-weight: bold; }
+h5 { font-size: 15px; line-height: 26px; }
+h6 { font-size: 15px; line-height: 26px; font-style: italic; font-weight: bold; }*/
+
+p       { margin: 0 0 20px 0; }
+p img   { margin: 0; }
+
+em      { font-style: italic; }
+strong  { font-weight: bold; }
+
+/*  Links
+================================================== */
+a {
+  color: #d61212;
+  text-decoration: none;
+  outline: 0;
+  -webkit-transition: color .15s ease-in-out;
+     -moz-transition: color .15s ease-in-out;
+          transition: color .15s ease-in-out;
+}
+a:hover,
+a:focus {
+  color: #ff2400;
+}
+
+
+/*  Lists
+================================================== */
+ul,
+ol { margin: 0 0 26px 26px; }
+ul { list-style: square outside; }
+
+
+
+/*  Layout
+================================================== */
+.navbar {
+  position: fixed;
+  width: 125px;
+  padding-top: 80px;
+  text-align: center;
+  left: 75px;
+}
+.main-content {
+  padding-top: 80px;
+  margin-left: 250px;
+  margin-right: 75px;
+}
+/* Self Clearing Goodness */
+.container:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;}
+
+/*  Navbar
+================================================== */
+.logo {
+  display: block;
+  width: 126px;
+  height: 126px;
+  background-image: url(../images/logo.png);
+  font-size: 0;
+  margin-bottom: 25px;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0 0 30px 0;
+}
+.navbar ul a {
+  line-height: 18px;
+  color: #777;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: proxima-nova-condensed, helvetica-neue, helvetica, sans-serif;
+}
+.navbar li.active a,
+.navbar li:hover a {
+  color: #000;
+}
+/*.offsite-links li a {
+  display: block;
+  float: right;
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  margin-left: 5px;
+  background-image: url(../images/social-icons.png);
+  opacity: .4;
+  -webkit-transition: opacity .15s ease-in-out;
+     -moz-transition: opacity .15s ease-in-out;
+          transition: opacity .15s ease-in-out;
+}
+.offsite-links li a:hover {
+  opacity: 1;
+}
+.offsite-links a.rss-link       { background-position: 25px 0; }
+.offsite-links a.flickr-link    { background-position: 112px 0; }
+.offsite-links a.twitter-link   { background-position: 54px 0; }
+.offsite-links a.dribbble-link  { background-position: 83px 0; }
+*/
+
+/*  Main Content
+================================================== */
+article {
+  padding-bottom: 60px;
+  margin-bottom: 40px;
+  background: url(../images/divider.png) bottom center no-repeat;
+}
+.article-title {
+  font-weight: 300;
+  font-family: proxima-nova-extra-condensed, proxima-nova-condensed, helvetica-neue, helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 50px;
+  letter-spacing: -1px;
+}
+.article-time {
+  font-size: 14px;
+  font-style: italic;
+  color: #999;
+}
+.callout {
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
+}
+.article-header {
+  margin-bottom: 20px;
+}
+.article-body {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+    -webkit-column-gap: 50px;
+       -moz-column-gap: 50px;
+            column-gap: 50px;
+}
+.article-body figure {
+  margin-bottom: 20px;
+}
+.article-body figure img {
+  max-width: 100%;
+  max-height: 600px;
+}
+.article-body figcaption {
+  color: #999;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: -3px;
+}
+
+
+
+/*  Page Fades (On load on scrolling)
+================================================== */
+body {
+  opacity: 0;
+  -webkit-transition: opacity .3s ease-in-out;
+     -moz-transition: opacity .3s ease-in-out;
+          transition: opacity .3s ease-in-out;
+}
+body.rendered {
+  opacity: 1;
+}
+
+
+@media only screen and (max-width: 1050px) {
+  body.rendered .navbar {
+    left: 40px;
+    margin-left: 0;
+    -webkit-transition: none;
+     -moz-transition: none;
+          transition: none;
+  }
+  .article-body {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .navbar {
+    display: none;
+  }
+  .main-content {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .main-content {
+    width: 92%;
+  }
+}
+
+
+/*  Misc
+================================================== */
+::selection {
+  background: #D61212;
+  color: #fff;
+}
+::-moz-selection {
+  background: #D61212;
+  color: #fff;
+}
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+.row:after,
+.clearfix:after {
+  clear: both; }
+.row,
+.clearfix {
+  zoom: 1; }
