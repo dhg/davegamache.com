@@ -9,7 +9,6 @@
 
 $(document).ready(function() {
 
-  $('body').addClass('rendered')
-
+  // $('body').addClass('load-animation');
 
 });
