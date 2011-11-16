@@ -5,7 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Dave Gamache: Designer &amp; Developer at Twitter</title>
+  <title>Dave Gamache: Designer &amp; Developer</title>
   <meta name="description" content="Dave Gamache: Designer and Developer at Twitter in San Francisco">
   <meta name="author" content="Dave Gamache, @dhg">
   <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

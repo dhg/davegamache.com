@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: atrament-web, SteelfishRg-Regular, sans-serif;
   text-transform: uppercase;
+  color: #000;
 }
 p {
   margin: 0 0 26px 0;
@@ -59,9 +60,6 @@ a:hover {
   max-width: 1400px;
   margin: 0 auto;
   background-color: #fff;
-}
-.art-header {
-  background-color: #111;
 }
 /* Self Clearing Goodness */
 .container:after {
@@ -102,7 +100,7 @@ a:hover {
   margin-left: 0;
 }
 .nav li a,
-.nav #logo {
+.nav #logo h1 {
   font-size: 30px;
   line-height: 30px;
   font-family: atrament-web, SteelfishRg-Regular, sans-serif;
@@ -112,7 +110,7 @@ a:hover {
 
 /* White nav */
 .nav.white li a,
-.nav.white #logo {
+.nav.white #logo h1{
   color: #fff;
   text-shadow: 0 0 8px rgba(0,0,0,.5);
 }
@@ -120,15 +118,13 @@ a:hover {
   border-bottom-color: rgba(255,255,255,.3);
 }
 
-
 /*  Main Content
 ================================================== */
 /* Article header */
 .art-header {
-  height: 520px;
+  height: 500px;
   margin-top: -131px;
-  padding-top: 280px;
-  color: #fff;
+  padding-top: 300px;
   background-image: url('http://cl.ly/2p3Q3k0k2o1Q3p1V3X1Z/craftsmanship.jpg');
   background-position: top center;
 }
@@ -136,34 +132,38 @@ a:hover {
   display: block;
   font-size: 18px;
   font-style: italic;
-  text-shadow: 0 0 8px rgba(0,0,0,.5);
+  text-align: center;
 }
 .art-title {
   font-size: 150px;
   line-height: 130px;
-  color: #fff;
   margin: -5px 0 10px -4px;
-  text-shadow: 0 0 8px rgba(0,0,0,.5);
+  text-align: center;
 }
 .art-subtitle {
   font-size: 24px;
   line-height: 30px;
   font-style: italic;
+  text-align: center;
+}
+
+/* White Header */
+.art-header.white .art-time,
+.art-header.white .art-title,
+.art-header.white .art-subtitle {
+  color: #fff;
   text-shadow: 0 0 8px rgba(0,0,0,.5);
+}
+.art-header.white {
+  background-color: #111;
 }
 
 /* Body */
-.art-content {
-  padding-top: 80px;
+.art .container {
+  max-width: 600px;
 }
-.art-row {
-  margin-bottom: 52px;
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-    -webkit-column-gap: 40px;
-       -moz-column-gap: 40px;
-            column-gap: 40px;
+.art-content {
+  padding: 80px 0 50px;
 }
 .art-subhead {
   font-size: 50px;
@@ -176,8 +176,9 @@ a:hover {
   font-style: italic;
   color: #000;
 }
-.art-row img {
+.art-content img {
   margin-bottom: 26px;
+  max-width: 100%;
 }
 
 
@@ -213,17 +214,14 @@ a:hover {
   font-size: 40px;
   color: #000;
   text-shadow: none;
-  text-align: center;
   line-height: 40px;
 }
 .art-listing .art-time {
   font-size: 14px;
   color: #999;
   text-shadow: none;
-  text-align: center;
 }
 .art-listing .art-summary {
-  text-align: center;
   font-size: 14px;
   line-height: 21px;
 }
@@ -270,11 +268,6 @@ a:hover {
   }
 }
 @media only screen and (max-width: 800px) {
-  .art-row {
-    -webkit-column-count: 1;
-       -moz-column-count: 1;
-            column-count: 1;
-  }
   .art-header {
     height: 340px;
     padding-top: 240px;
@@ -326,6 +319,10 @@ a:hover {
     float: none;
     width: auto;
     text-align: left;
+  }
+  .copyright {
+    font-size: 14px;
+    color: #444;
   }
 }
 @media only screen and (max-width: 550px) {
