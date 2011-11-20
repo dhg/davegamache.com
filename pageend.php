@@ -1,12 +1,11 @@
   <footer class="footer">
     <div class="container">
       <nav class="footer-nav">
-        <a href="">View all articles</a>
-        &middot;
         <a href="#">Back to top</a>
       </nav>
-      <div class="copyright">
-        Copyright 2011
+      <div class="art-nav">
+        <a class="prev" href="#"><!-- <span class="hand">&#9756;</span> -->Previous / </a>
+        <a class="next" href="#">Next<!-- <span class="hand">&#9758;</span> --></a>
       </div>
       <aside class="offsite-links">
         <a href="">Twitter</a> |

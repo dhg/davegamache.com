@@ -14,7 +14,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Body Styles
 ================================================== */
 body {
-  font: 16px/26px ff-meta-serif-web-pro, "Georgia", serif;
+  font: 17px/28px ff-meta-serif-web-pro, "Georgia", serif;
   color: #333;
   background: #e4e4e4;
   overflow-x: hidden;
@@ -171,8 +171,8 @@ a:hover {
   margin-bottom: 26px;
 }
 .callout {
-  font-size: 23px;
-  line-height: 28px;
+  font-size: 24px;
+  line-height: 32px;
   font-style: italic;
   color: #000;
 }
@@ -181,6 +181,34 @@ a:hover {
   max-width: 100%;
 }
 
+/* Footer */
+/*.art-nav {
+  text-align: center;
+  font-style: italic;
+}
+.art-nav a {
+  color: #999;
+}*/
+/*.art-nav .hand {
+  position: relative;
+  top: 4px;
+  font-size: 25px;
+}
+.art-nav .prev {
+  float: left;
+  color: #999;
+}
+.art-nav .next {
+  float: right;
+  color: #999;
+}
+.art-nav .prev .hand {
+  margin-right: 5px;
+}
+.art-nav .next .hand {
+  margin-left: 5px;
+}
+*/
 
 /*  Article Listing
 ================================================== */
@@ -215,6 +243,7 @@ a:hover {
   color: #000;
   text-shadow: none;
   line-height: 40px;
+  margin-bottom: 8px;
 }
 .art-listing .art-time {
   font-size: 14px;
@@ -222,8 +251,9 @@ a:hover {
   text-shadow: none;
 }
 .art-listing .art-summary {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 21px;
+  text-align: center;
 }
 .art-thumb {
   width: 100%;
@@ -240,19 +270,19 @@ a:hover {
 }
 .footer,
 .footer a {
-  font-size: 14px;
+  font-size: 15px;
   color: #444;
+  font-style: italic;
 }
 .offsite-links {
   text-align: right;
 }
-.copyright {
+.art-nav {
   text-align: center;
   color: #999;
-  font-size: 12px;
 }
 .footer-nav,
-.copyright,
+.art-nav,
 .offsite-links {
   width: 33.3%;
   float: left;
@@ -304,6 +334,7 @@ a:hover {
   }
   .art-listing ul {
     margin-left: 0;
+    overflow: hidden;
   }
   .art-listing li a {
     display: block;

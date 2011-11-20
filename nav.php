@@ -5,9 +5,9 @@
     </a>
     <ul>
       <li class="active"><a href="articles.php">Articles</a></li>
-      <li><a href="#">Notes</a></li>
+      <li><a href="#">Musings</a></li>
       <li><a href="#">Work</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
     </ul>
   </div>
 </nav>
