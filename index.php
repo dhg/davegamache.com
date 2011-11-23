@@ -3,6 +3,7 @@
   include 'nav.php';
 ?>
 
+
   <header class="art-header white">
     <div class="container">
       <time class="art-time">March 19th, 2011</time>
