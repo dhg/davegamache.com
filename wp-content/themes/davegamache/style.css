@@ -1,0 +1,487 @@
+/* Reset & Basics (Inspired by E. Meyers)
+================================================== */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, cite, code, em, img, small, strong, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, embed, figure, figcaption, footer, header, hgroup, menu, nav, section, summary, time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+
+/* Body Styles
+================================================== */
+body {
+  font: 17px/28px ff-meta-serif-web-pro, "Georgia", serif;
+  color: #333;
+  background: #e4e4e4;
+  overflow-x: hidden;
+}
+
+
+/* Typography
+================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: atrament-web, SteelfishRg-Regular, sans-serif;
+  text-transform: uppercase;
+  color: #000;
+}
+p {
+  margin: 0 0 26px 0;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+
+
+/* Links
+================================================== */
+a {
+  color: #b20f1f;
+  text-decoration: none;
+}
+a:hover {
+  color: #8d0d19;
+}
+
+
+/*  Layout
+================================================== */
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #fff;
+}
+.nav,
+.art-content,
+.footer,
+.art-list {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+}
+
+/*  Navbar
+================================================== */
+
+.nav {
+  z-index: 2;
+  padding-top: 50px;
+  height: 80px;
+  border-bottom: 1px solid #000;
+}
+#logo {
+  float: left;
+}
+.nav ul {
+  float: right;
+}
+.nav li {
+  display: inline-block;
+  margin-left: 60px;
+}
+.nav li a,
+.nav #logo h1 {
+  font: 30px/30px atrament-web, SteelfishRg-Regular, sans-serif;
+  color: #000;
+  text-transform: uppercase;
+}
+.nav li:first-child {
+  margin-left: 0; /* Remove left margin from the first nav li */
+}
+
+/*  An Article
+================================================== */
+/* Structure */
+.art {
+  margin-top: -131px; /* Nav is 130px tall (height + padding) and a 1px border */
+}
+/* Header */
+.art-header {
+  height: 500px;
+  padding-top: 300px;
+  background-position: top center; /* Background image is defined in the post */
+}
+.art-time {
+  display: block;
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+  -webkit-transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+     -moz-transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+          transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+}
+.art-title {
+  font-size: 150px;
+  line-height: 130px;
+  margin: -5px 0 10px -4px;
+  text-align: center;
+  -webkit-transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+     -moz-transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+          transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+
+}
+.art-subtitle {
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
+  text-align: center;
+  -webkit-transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+     -moz-transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+          transition: font-size .4s ease-in-out, line-height .4s ease-in-out;
+}
+
+/* Body */
+.art-content {
+  max-width: 600px;
+  padding: 80px 0 50px;
+}
+.art-content ul {
+  margin-bottom: 26px;
+}
+.art-content ul li {
+  list-style: disc;
+}
+.art-subhead { /* Subheads are used to break up sections of an article */
+  font-size: 50px;
+  line-height: 55px;
+  margin-bottom: 26px;
+}
+.callout { /* Callouts are like large pullquotes */
+  font-size: 24px;
+  line-height: 32px;
+  font-style: italic;
+  color: #000;
+}
+.art-content img {
+  margin-bottom: 26px;
+  max-width: 100%;
+  max-height: 600px;
+}
+
+/* If simple article */
+.simple .art-header {
+  padding-top: 200px;
+  height: auto;
+}
+.simple .art-content {
+  padding-top: 20px;
+}
+.simple .art-subtitle {
+  display: none;
+}
+.simple .art-header {
+  width: 600px;
+  margin: 0 auto;
+}
+.simple .art-title {
+  font-size: 100px;
+  line-height: 100px;
+  margin: auto;
+  margin-top: -10px;
+  text-align: left;
+}
+.simple .art-time {
+  text-align: left;
+}
+
+
+/*  List of Articles
+================================================== */
+.art-list {
+  padding: 20px 0 80px;
+}
+.art-list ul {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.art-list li {
+  list-style: none;
+}
+.art-list li a {
+  display: block;
+  padding: 10px 20px;
+  -webkit-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+
+}
+.art-list li a:hover {
+  background-color: rgba(0,0,0,.1);
+}
+.art-list-title {
+  font-size: 100px;
+  line-height: 90px;
+  margin-bottom: 4px;
+}
+.art-list-subtitle {
+  font-style: italic;
+  color: #444;
+  line-height: 20px;
+}
+
+/* If simple post */
+.simple .art-list-title {
+  font-size: 50px;
+  line-height: 50px;
+}
+.simple .art-list-subtitle {
+  font-size: 14px;
+}
+
+/* Article list background */
+.background-image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.background-image img {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  top: -50%;
+}
+
+
+/*  Footer
+================================================== */
+.footer {
+  border-top: 1px solid #000;
+  padding: 10px 0 100px;
+}
+.footer,
+.footer a {
+  font-size: 15px;
+  color: #000;
+  font-style: italic;
+}
+.footer a:hover {
+  color: #000;
+}
+.back-to-top,
+.footer-nav,
+.offsite-links {
+  width: 33.3%;
+  float: left;
+}
+.footer-nav {
+  text-align: center;
+}
+.offsite-links {
+  text-align: right;
+}
+.footer .twitter-link:hover {
+  color: #0084B4;
+}
+.footer .dribbble-link:hover {
+  color: #c5376d;
+}
+.footer .rss-link:hover {
+  color: #e85d24;
+}
+/* Remove prev & next links on loop */
+.art-list + .footer .footer-nav a {
+  visibility: hidden;
+}
+
+/*  White Reverse Theme
+================================================== */
+/* Nav */
+.nav.white  {
+  border-bottom-color: rgba(255,255,255,.3);
+}
+.nav.white li a,
+.nav.white #logo h1{
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,.5);
+}
+/* Art header */
+.art-header.white {
+  background-color: #111;
+}
+.art-header.white .art-time,
+.art-header.white .art-title,
+.art-header.white .art-subtitle {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,.5);
+}
+
+
+/*  Responsive
+================================================== */
+
+@media only screen and (max-width: 1080px) {
+  .nav,
+  .art-content,
+  .art-header .art-title,
+  .art-header .art-subtitle,
+  .footer,
+  .art-list {
+    width: 90%;
+  }
+  .art-header .art-title,
+  .art-header .art-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .art-header {
+    height: 340px;
+    padding-top: 240px;
+  }
+  .art-time {
+    font-size: 16px;
+  }
+  .art-title {
+    font-size: 90px;
+    line-height: 80px;
+    margin-top: -6px;
+    margin-bottom: 4px;
+  }
+  .art-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .art-content ul {
+    margin-left: 20px;
+  }
+  .art-list-title {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 0;
+  }
+  .simple .art-list-title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nav {
+    height: 55px;
+    padding-top: 25px;
+  }
+  .nav li {
+    margin-left: 30px;
+  }
+  .nav li a,
+  .nav #logo h1 {
+    font-size: 24px;
+  }
+  .art-header {
+    height: 220px;
+    padding-top: 160px;
+  }
+  .art-time {
+    font-size: 17px;
+  }
+  .art-title {
+    font-size: 60px;
+    line-height: 55px;
+  }
+  .art-subtitle {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .art-content {
+    padding-top: 40px;
+  }
+  .art-subhead {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 15px;
+  }
+  body {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+  .callout {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .art-list {
+    padding-bottom: 20px;
+  }
+  .art-content ul {
+    margin-bottom: 15px;
+  }
+  .footer {
+    padding-bottom: 40px;
+  }
+  .back-to-top,
+  .footer-nav {
+    width: 50%;
+  }
+  .back-to-top {
+    text-align: left;
+  }
+  .footer-nav {
+    text-align: right;
+  }
+  .offsite-links {
+    float: none;
+    width: 100%;
+    text-align: left;
+    color: #999;
+  }
+  .offsite-links a {
+    color: #999;
+    font-size: 12px;
+  }
+  .art-list + .footer .footer-nav {
+    display: none;
+  }
+}
+
+
+/*  Misc
+================================================== */
+::selection {
+  background: #000;
+  color: #fff;
+}
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+img.left {
+  float: left;
+  margin-right: 20px;
+}
+img.right {
+  float: right;
+  margin-left: 20px;
+}
+/* Clearfixing pile */
+.nav:before,
+.art-content:before,
+.footer:before,
+.art-list:before {
+  content:"";
+  display:table;
+}
+.nav:after,
+.art-content:after,
+.footer:after,
+.art-list:after {
+  clear:both;
+}
+.nav,
+.art-content,
+.footer,
+.art-list {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
