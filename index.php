@@ -1,36 +1,18 @@
 <?php
-  include 'header.php';
-  include 'nav.php';
-?>
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define('WP_USE_THEMES', true);
 
-  <header class="art-header white">
-    <div class="container">
-      <time class="art-time">March 19th, 2011</time>
-      <h2 class="art-title">Craftsmanship</h2>
-      <p class="art-subtitle">To imbue excellence into all that one does in concept, process and execution.</p>
-    </div>
-  </header>
-  <article class="art">
-    <div class="container">
-      <div class="art-content">
-        <p>Responsive design is not a silver bullet, but it is the strongest solution to the rapidly growing set of devices web designers and developers have to account for. It would be impossible to design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just </p>
-        <p>Responsive design is not a silver bullet, but it is the strongest solution to the rapidly growing set of devices web designers and developers have to account for. It would be impossible to design for individual devices and screen sizes these days - </p>
-        <p>design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just this. About a week ago I pushed the launch button on www.getskeleton.com and just wanted to share a short bit about why I did.</p>
-        <p class="callout">Fashion is fleeting, craft is forever. Do it right, or die like a bitch. Fashion is fleeting, craft is forever. Do it right, or die like a bitch.</p>
-        <p>Responsive design is not a silver bullet, but it is the strongest solution to the rapidly growing set of devices web designers and developers have to account for. It would be impossible to design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. </p>
-        <p>Skeleton does just design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just this. About a week ago I pushed the launch button on www.getskeleton.com and just wanted to share a short bit about why I did. Design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just this. About a week ago I pushed the launch button on www.getskeleton.com and just wanted to share a short bit about why I did.</p>
-        <h3 class="art-subhead">Fashion is fleeting. Craft is forever. Do it right.</h3>
-        <p>Responsive design is not a silver bullet, but it is the strongest solution to the rapidly growing set of devices web designers and developers have to account for. It would be impossible to design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just </p>
-        <p>Responsive design is not a silver bullet, but it is the strongest solution to the rapidly growing set of devices web designers and developers have to account for. It would be impossible to design for individual devices and screen sizes these days - </p>
-        <p>design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just this. About a week ago I pushed the launch button on www.getskeleton.com and just wanted to share a short bit about why I did.</p>
-        <p class="callout">Fashion is fleeting, craft is forever. Do it right, or die like a bitch. Fashion is fleeting, craft is forever. Do it right, or die like a bitch.</p>
-        <p>Responsive design is not a silver bullet, but it is the strongest solution to the rapidly growing set of devices web designers and developers have to account for. It would be impossible to design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. </p>
-        <p>Skeleton does just design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just this. About a week ago I pushed the launch button on <a href="#">www.getskeleton.com</a> and just wanted to share a short bit about why I did. Design for individual devices and screen sizes these days - instead let’s be smart and essentially “bucket” devices into categorical sizes and design appropriately. Skeleton does just this. About a week ago I pushed the launch button on www.getskeleton.com and just wanted to share a short bit about why I did.</p>
-      </div>
-    </div>
-  </article>
-<?php
-  include 'pageend.php';
-  include 'footer.php';
+/** Loads the WordPress Environment and Template */
+require('./wp-blog-header.php');
 ?>
