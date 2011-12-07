@@ -9,12 +9,36 @@
   $bg_image = $bg_image[0];
   include ("header.php");
 ?>
+
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var scrollContainer = $('.art-header-scroll-container');
+    var scrollContainerTop = parseInt(scrollContainer.css('top'));
+    $(window).scroll(function() {
+      scrollFromTop = $(this).scrollTop();
+      console.log(scrollFromTop)
+      scrollContainer.css({
+        'top' : (scrollContainerTop-(scrollFromTop/4))+"px",
+        'opacity' : 1-(scrollFromTop/500)
+      })
+    })
+  })
+</script>
+
+
+
+
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
   <article class="art<?php if($simple_art == "true"){ ?> simple<?php } ?>">
     <header class="art-header<?php if($white_header == "true"){ ?> white<?php } ?>" style="background-image: url(<?php if(isset($bg_image)) { echo $bg_image; } ?>)">
-      <time class="art-time"><?php the_time('F jS, Y') ?></time>
-      <h2 class="art-title"><?php the_title(); ?></h2>
-      <p class="art-subtitle"><?php the_subtitle(); ?></p>
+      <div class="art-header-scroll-container">
+        <time class="art-time"><?php the_time('F jS, Y') ?></time>
+        <h2 class="art-title"><?php the_title(); ?></h2>
+        <p class="art-subtitle"><?php the_subtitle(); ?></p>
+      </div>
     </header>
     <div class="art-content">
       <?php the_content(); ?>

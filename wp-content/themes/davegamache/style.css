@@ -100,14 +100,22 @@ a:hover {
 /*  An Article
 ================================================== */
 /* Structure */
-.art {
-  margin-top: -131px; /* Nav is 130px tall (height + padding) and a 1px border */
+
+
+.art-header-scroll-container {
+  position: fixed;
+  top: 300px;
+  left: 0;
+  width: 100%;
 }
+
+
 /* Header */
 .art-header {
-  height: 500px;
-  padding-top: 300px;
+  height: 750px;
   background-position: top center; /* Background image is defined in the post */
+  background-attachment: fixed;
+  overflow: hidden;
 }
 .art-time {
   display: block;
@@ -146,6 +154,8 @@ a:hover {
 .art-content {
   max-width: 600px;
   padding: 80px 0 50px;
+  position: relative;
+  z-index: 100;
 }
 .art-content ul {
   margin-bottom: 26px;
@@ -607,6 +617,7 @@ img.right {
 }
 
 .shelf-wash {
+  display: none;
   background: rgba(0,0,0,0);
   overflow: auto;
   position: fixed;
@@ -623,6 +634,7 @@ img.right {
 
 .shelf-open {
   overflow-y: hidden;
+  margin-right: 15px;
 }
 .shelf-open .shelf {
   position: absolute;
