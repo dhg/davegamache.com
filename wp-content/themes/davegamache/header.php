@@ -14,7 +14,7 @@
   <script type="text/javascript" src="http://use.typekit.com/cjx7kil.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body class="shelf-open">
   <div class="wrapper">
     <nav class="nav<?php if($white_nav == "true"){ ?> white<?php } ?>">
       <a id="logo" href="<?php bloginfo('url'); ?>">
