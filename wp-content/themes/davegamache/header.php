@@ -22,6 +22,6 @@
       </a>
       <ul>
         <li><a href="<?php bloginfo('url'); ?>/articles">Articles</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="<?php bloginfo('url'); ?>/about">About</a></li>
       </ul>
     </nav>

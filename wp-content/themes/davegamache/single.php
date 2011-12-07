@@ -22,4 +22,65 @@
   </article>
 
 <?php endwhile; ?>
+
+
+
+
+
+<div class="shelf-wash"></div>
+<nav class="shelf">
+  <div class="shelf-header">
+    <h5>Articles</h5>
+
+
+    <div class="castle">
+      <div class="rampart1"></div>
+      <div class="castle-body"></div>
+      <div class="rampart2"></div>
+    </div>
+
+
+
+  </div>
+  <div class="shelf-body">
+    <ul>
+      <li>
+        <a href="">
+          <h2>Craftsmanship</h2>
+          <p class="subtitle">Quality, passion and experience</p>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <h2>Skeleton Boilerplate</h2>
+          <p class="subtitle">A Beautiful Boilerplate for Responsive, Mobi&hellip;</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php get_footer(); ?>

@@ -1,6 +1,6 @@
-<div class="background-image">
+<!-- <div class="background-image">
   <img src="<?php bloginfo('url'); ?>/wp-content/uploads/2011/art-list-bg-3.jpg" alt="">
-</div>
+</div> -->
 <nav class="art-list">
   <ul>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
