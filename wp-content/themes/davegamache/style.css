@@ -14,7 +14,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Body Styles
 ================================================== */
 body {
-  font: 17px/28px ff-meta-serif-web-pro, "Georgia", serif;
+  font: 18px/28px minion-pro, "Georgia", serif;
   color: #333;
   background: #e4e4e4;
   overflow-x: hidden;
@@ -25,7 +25,6 @@ body {
 ================================================== */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  font-family: atrament-web, SteelfishRg-Regular, sans-serif;
   text-transform: uppercase;
   color: #000;
 }
@@ -72,6 +71,10 @@ a:hover {
 ================================================== */
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -490px;
   z-index: 2;
   padding-top: 50px;
   height: 80px;
@@ -112,7 +115,7 @@ a:hover {
 
 /* Header */
 .art-header {
-  height: 750px;
+  height: 900px;
   background-position: top center; /* Background image is defined in the post */
   background-attachment: fixed;
   overflow: hidden;
@@ -154,8 +157,6 @@ a:hover {
 .art-content {
   max-width: 600px;
   padding: 80px 0 50px;
-  position: relative;
-  z-index: 100;
 }
 .art-content ul {
   margin-bottom: 26px;
@@ -556,8 +557,20 @@ img.right {
 
 
 
+.art {
+  margin-top: -131px;
+}
 
 
+.art-content-wrapper {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background: #fff;
+  -webkit-box-shadow: 0 -3px 3px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 -3px 3px rgba(0,0,0,.2);
+          box-shadow: 0 -3px 3px rgba(0,0,0,.2);
+}
 
 
 
@@ -619,8 +632,10 @@ img.right {
 .shelf-wash {
   display: none;
   background: rgba(0,0,0,0);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
+  z-index: 2000;
   top: 0;
   left: 0;
   right: 0;
@@ -639,7 +654,9 @@ img.right {
 .shelf-open .shelf {
   position: absolute;
 }
-
+.shelf-open .castle {
+  right: 25px;
+}
 .shelf-open .shelf {
   right: 0px;
 }
@@ -647,11 +664,6 @@ img.right {
   background: rgba(0,0,0,.2);
 }
 
-
-
-.castle {
-  float: right;
-}
 
 
 .castle-body,
@@ -677,9 +689,14 @@ img.right {
 
 
 .castle {
+  display: none;
   position: relative;
   width: 24px;
   height: 18px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 3000;
 }
 .rampart1,
 .rampart2 {

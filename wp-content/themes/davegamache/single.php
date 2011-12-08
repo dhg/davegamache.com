@@ -12,23 +12,6 @@
 
 
 
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    var scrollContainer = $('.art-header-scroll-container');
-    var scrollContainerTop = parseInt(scrollContainer.css('top'));
-    $(window).scroll(function() {
-      scrollFromTop = $(this).scrollTop();
-      console.log(scrollFromTop)
-      scrollContainer.css({
-        'top' : (scrollContainerTop-(scrollFromTop/4))+"px",
-        'opacity' : 1-(scrollFromTop/500)
-      })
-    })
-  })
-</script>
-
-
 
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -40,8 +23,10 @@
         <p class="art-subtitle"><?php the_subtitle(); ?></p>
       </div>
     </header>
-    <div class="art-content">
-      <?php the_content(); ?>
+    <div class="art-content-wrapper">
+      <div class="art-content">
+        <?php the_content(); ?>
+      </div>
     </div>
   </article>
 
@@ -50,18 +35,18 @@
 
 
 
+<div class="castle">
+  <div class="rampart1"></div>
+  <div class="castle-body"></div>
+  <div class="rampart2"></div>
+</div>
+
+
 
 <div class="shelf-wash">
   <nav class="shelf">
     <div class="shelf-header">
       <h5>Articles</h5>
-
-
-      <div class="castle">
-        <div class="rampart1"></div>
-        <div class="castle-body"></div>
-        <div class="rampart2"></div>
-      </div>
 
 
 
