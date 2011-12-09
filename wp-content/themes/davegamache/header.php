@@ -14,13 +14,14 @@
   <script type="text/javascript" src="http://use.typekit.com/cjx7kil.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body class="">
+
+<body>
   <div class="wrapper">
-    <nav class="nav<?php if($white_nav == "true"){ ?> white<?php } ?>">
+    <nav class="nav<?php if($white_header == "true"){ ?> white<?php } ?>">
       <a id="logo" href="<?php bloginfo('url'); ?>">
         <h1>Dave Gamache</h1>
       </a>
-      <ul>
+      <ul class="nav-primary">
         <li><a href="<?php bloginfo('url'); ?>/articles">Articles</a></li>
         <li><a href="<?php bloginfo('url'); ?>/about">About</a></li>
       </ul>

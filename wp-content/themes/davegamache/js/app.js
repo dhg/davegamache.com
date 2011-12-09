@@ -1,28 +1,41 @@
 $(document).ready(function() {
-  var scrollContainer = $('.art-header-scroll-container');
-  var artHeader = $('.art-header');
-  var nav = $('.nav');
-  var scrollContainerTop = parseInt(scrollContainer.css('top'));
+
+
+  var $artHeaderInner = $('.art-header-inner');
+  var $artHeader = $('.art-header');
+  var $nav = $('.nav');
+  var artHeaderInnerTop = parseInt($artHeaderInner.css('top'));
+  var windowScroll;
+
+
   $(window).scroll(function() {
-    scrollFromTop = $(this).scrollTop();
-    console.log(scrollFromTop)
-    scrollContainer.css({
-      'top' :                 (scrollContainerTop-(scrollFromTop/3))+"px",
-      'opacity' :             1-(scrollFromTop/550)
-    })
-    artHeader.css({
-      'background-position' : 'center ' + (-scrollFromTop/8)+"px"
+
+    //Get scroll position of window
+    windowScroll = $(this).scrollTop();
+
+    //Slow scroll of .art-header-inner scroll and fade it out
+    $artHeaderInner.css({
+      'top' : (artHeaderInnerTop-(windowScroll/3.5))+"px",
+      'opacity' : 1-(windowScroll/550)
     });
-    nav.css({
-      'opacity' :             1-(scrollFromTop/400)
-    })
-  })
+
+    //Slowly parallax the background of .art-header
+    $artHeader.css({
+      'background-position' : 'center ' + (-windowScroll/8)+"px"
+    });
+
+    //Fade the .nav out
+    $nav.css({
+      'opacity' : 1-(windowScroll/400)
+    });
+  });
+});
 
 
-
-  $('.castle').click(function() {
-    $('body').toggleClass('shelf-open')
-  })
-
-
-})
+//Call Masonry on Articles page
+$(function(){
+  $('.art-list ul').masonry({
+    itemSelector : '.art-list-item',
+    columnWidth : 340
+  });
+});
