@@ -18,10 +18,5 @@
 
   </div> <!-- / .wrapper -->
 
-  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
-
 </body>
 </html>

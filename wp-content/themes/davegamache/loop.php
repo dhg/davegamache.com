@@ -4,7 +4,7 @@
 <nav class="art-list">
   <h2 class="art-list-section-title">Articles</h2>
   <h5 class="art-list-section-subtitle">Long form writing</h5>
-  <ul>
+  <ul class="art-list-articles">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
       <?php
         $category = get_the_category();
@@ -14,7 +14,7 @@
       ?>
       <?php if($category == "article"){ ?>
         <li class="art-list-item">
-          <div class="art-list-time">July 30, 1988</div>
+          <div class="art-list-time"><?php the_time('F jS, Y') ?></div>
           <h2 class="art-list-title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
           </h2>
@@ -26,7 +26,7 @@
   </ul>
   <h2 class="art-list-section-title">Thoughts</h2>
   <h5 class="art-list-section-subtitle">Short and sweet</h5>
-  <ul>
+  <ul class="art-list-thoughts">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
       <?php
         $category = get_the_category();
@@ -36,7 +36,7 @@
       ?>
       <?php if($category == "simple"){ ?>
         <li class="art-list-item">
-          <div class="art-list-time">July 30, 1988</div>
+          <div class="art-list-time"><?php the_time('F jS, Y') ?></div>
           <h2 class="art-list-title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
           </h2>

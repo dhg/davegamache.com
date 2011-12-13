@@ -41,7 +41,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, time,
 ================================================== */
 body {
   overflow-x: hidden;
-  font: 20px/30px adobe-text-pro, "Georgia", serif;
+  font: 18px/30px adobe-text-pro, "Georgia", serif;
   color: #333;
   background: #e4e4e4;
 }
@@ -109,6 +109,9 @@ a:hover {
   padding-top: 40px;
   height: 70px;
   border-bottom: 1px solid #000;
+}
+.nav.fixed {
+  position: fixed;
 }
 #logo {
   float: left;
@@ -257,31 +260,39 @@ a:hover {
   padding: 160px 0 80px;
 }
 .art-list ul {
+  overflow: hidden;
   position: relative;
-  margin-left: -20px;
-  margin-right: -20px;
   margin-bottom: 100px;
   margin-top: 40px;
 }
 .art-list li {
   list-style: none;
   float: left;
-  width: 300px;
-  margin: 0 20px;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
+}
+/*.art-list li:last-child {
+  border-bottom: none;
+}*/
+.art-list-articles li {
+  width: 477px;
+}
+.art-list-thoughts li {
+  width: 220px;
 }
 .art-list-time {
   font-size: 12px;
   color: #999;
   font-family: Helvetica, sans-serif;
-  letter-spacing: 3px;
+  /*letter-spacing: 1px;*/
   text-transform: uppercase;
   line-height: 16px;
 }
 .art-list-item p {
   font-size: 16px;
   line-height: 24px;
+}
+.art-list img {
+  max-width: 100%;
 }
 .art-list-title {
   font-size: 30px;
@@ -410,15 +421,6 @@ a:hover {
   .art-body-inner ul {
     margin-left: 20px;
   }
-  .art-list-title {
-    font-size: 60px;
-    line-height: 60px;
-    margin-bottom: 0;
-  }
-  .simple .art-list-title {
-    font-size: 40px;
-    line-height: 40px;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -466,8 +468,8 @@ a:hover {
     line-height: 42px;
   }
   body {
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 26px;
   }
   p {
     margin-bottom: 15px;
@@ -546,4 +548,64 @@ img.right {
 .footer,
 .art-list {
     zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
+
+
+
+
+
+.art-list ul li {
+  width: 100%;
+  padding: 40px 0;
+}
+.art-list ul li .art-list-time {
+  width: 10%;
+  float: right;
+}
+.art-list ul li h2 {
+  float: left;
+  width: 30%;
+  font-size: 45px;
+}
+.art-list ul li h2 a {
+  color: #000;
+}
+.art-list .art-list-thoughts li h2 {
+  font-size: 30px;
+}
+.art-list ul li p {
+  float: left;
+  width: 50%;
+  margin-left: 5%;
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
 }
