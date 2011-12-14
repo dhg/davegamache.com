@@ -9,22 +9,22 @@ $(document).ready(function() {
   var $artTime = $('.art-time');
   var artTitleFontSize = parseInt($artTitle.css('font-size'));
   var $nav = $('.nav');
-  var artHeaderInnerTop = parseInt($artHeaderInner.css('top'));
   var windowScroll;
 
 
   $artTitle.fitText(1, { minFontSize: '40px' });
 
-
-
   $(window).scroll(function() {
+    slidingTitle();
+  });
 
+  function slidingTitle() {
     //Get scroll position of window
     windowScroll = $(this).scrollTop();
 
     //Slow scroll of .art-header-inner scroll and fade it out
     $artHeaderInner.css({
-      'top' : (artHeaderInnerTop-(windowScroll/3))+"px",
+      'margin-top' : -(windowScroll/3)+"px",
       'opacity' : 1-(windowScroll/550)
     });
 
@@ -37,6 +37,7 @@ $(document).ready(function() {
     $nav.css({
       'opacity' : 1-(windowScroll/400)
     });
-  });
+  }
+
 
 });
