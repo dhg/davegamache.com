@@ -19,7 +19,7 @@
   <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
 </head>
 
-<body>
+<body class="tester masonize">
   <div class="wrapper">
     <nav class="nav<?php if($postMeta["white_header"] == "true"){ ?> white<?php } if($postMeta["category"] == "article") { ?> fixed<?php } ?>">
       <a id="logo" href="<?php bloginfo('url'); ?>">

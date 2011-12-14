@@ -41,7 +41,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, time,
 ================================================== */
 body {
   overflow-x: hidden;
-  font: 18px/30px adobe-text-pro, "Georgia", serif;
+  font: 18px/30px ff-tisa-web-pro, "Georgia", serif;
   color: #333;
   background: #e4e4e4;
 }
@@ -209,17 +209,19 @@ a:hover {
   margin: 42px 10px 29px 0;
 }
 .art-subhead { /* Subheads are used to break up sections of an article */
-  font-size: 24px;
+  font-size: 20px;
   line-height: 40px;
   margin: 60px 0 10px;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 3px;
 }
 .callout { /* Callouts are like large pullquotes */
-  font-size: 28px;
-  line-height: 36px;
+  /*font-size: 28px;
+  line-height: 36px;*/
   font-style: italic;
-  color: #000;
+  /*color: #000;*/
+  font-weight: bold;
 }
 .art-body-inner img {
   margin-bottom: 26px;
@@ -257,12 +259,12 @@ a:hover {
 /*  List of Articles
 ================================================== */
 .art-list {
-  padding: 160px 0 80px;
+  padding: 100px 0 0;
 }
 .art-list ul {
   overflow: hidden;
   position: relative;
-  margin-bottom: 100px;
+  /*margin-bottom: 40px;*/
   margin-top: 40px;
 }
 .art-list li {
@@ -270,9 +272,9 @@ a:hover {
   float: left;
   border-bottom: 1px solid #ccc;
 }
-/*.art-list li:last-child {
+.art-list li:last-child {
   border-bottom: none;
-}*/
+}
 .art-list-articles li {
   width: 477px;
 }
@@ -563,26 +565,230 @@ img.right {
 .art-list ul li .art-list-time {
   width: 10%;
   float: right;
+  text-align: right;
 }
 .art-list ul li h2 {
   float: left;
   width: 30%;
-  font-size: 45px;
+  font-size: 32px;
+  line-height: 36px;
 }
 .art-list ul li h2 a {
   color: #000;
 }
-.art-list .art-list-thoughts li h2 {
+/*.art-list .art-list-thoughts li h2 {
   font-size: 30px;
-}
+}*/
 .art-list ul li p {
   float: left;
   width: 50%;
   margin-left: 5%;
   margin-bottom: 0;
 }
+.full-article {
+  display: none;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 14px;
+  color: #999;
+}
+/*.is-full-article h2 {
+  font-size: 45px !important;
+  line-height: 35px;
+}*/
+.is-full-article .full-article {
+  display: block;
+}
 
 
+
+
+body.combo .art-list ul li h2/*,
+body.combo .art-subhead */{
+  font-family: "helvetica neue";
+  font-weight: 100;
+  text-transform: uppercase;
+}
+body.combo .art-list ul li .art-list-time {
+  font-family: inherit;
+}
+body.combo .art-title {
+  font-family: "Helvetica neue";
+  font-weight: 100;
+}
+body.combo .art-subtitle {
+  font-family: inherit;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: 3px;
+  line-height: 16px;
+}
+body.combo .art-time {
+  font-family: inherit;
+  font-size: 14px;
+}
+/*body.combo #logo h1,
+body.combo .nav-primary li a {
+  font-family: "helvetica neue";
+  font-weight: 300;
+  font-size: 16px;
+}*/
+/*body.combo .footer,
+body.combo .footer a {
+  font-family: "helvetica neue";
+  font-weight: 300;
+  font-style: normal;
+}*/
+
+
+
+
+
+
+
+body.tester .art-list ul li h2/*,
+body.tester .art-subhead */{
+  font-family: "proxima nova";
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+body.tester .art-list ul li .art-list-time {
+  display: none;
+  font-family: inherit;
+}
+body.tester .art-title {
+  font-family: "proxima nova";
+  font-weight: 700;
+  line-height: 105px;
+}
+body.tester .art-subtitle {
+  font-family: inherit;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: 4px;
+  line-height: 0;
+  /*font-family: "proxima nova";*/
+  /*font-weight: bold;*/
+}
+body.tester .art-time {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  /*font-weight: bold;*/
+  /*font-family: "proxima nova"*/
+}
+body.tester .art-subhead {
+  font-family: "proxima nova";
+}
+body.tester .art-header-inner {
+  top: 340px;
+}
+
+body.tester {
+  font: 18px/30px ff-tisa-web-pro, "Georgia", serif;
+}
+body.tester .full-article {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body.tester .art-list ul li p {
+  width: 65%;
+}
+
+.tester #logo h1,
+.tester .nav-primary li a {
+  font-family: "proxima nova";
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+}
+.tester .footer,
+.tester .footer a {
+  font-style: normal;
+  font-family: "proxima nova"
+}
+
+.masonize.tester .art-list-articles {
+  margin-left: -25px;
+}
+.masonize.tester .art-list-articles li {
+  float: left;
+  width: 310px;
+  margin-left: 25px;
+}
+.masonize.tester .art-list-articles li p {
+  margin-left: 0 !important;
+  width: auto !important;
+}
+.masonize.tester .art-list ul li p,
+.masonize.tester .art-list ul li h2 {
+  width: auto;
+}
+
+
+
+
+
+
+
+
+body.helvetica {
+  font: 18px/30px "helvetica neue", "Georgia", serif;
+  font-weight: 300;
+}
+body.helvetica .footer,
+body.helvetica .footer a {
+  font-style: normal;
+}
+body.helvetica .art-title {
+  font-weight: 100;
+  letter-spacing: 0;
+}
+body.helvetica .art-subtitle {
+  font-size: 12px;
+  line-height: 16px;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+body.helvetica .art-header-inner {
+  top: 320px;
+}
+body.helvetica #logo h1 {
+  font-weight: 300;
+}
+body.helvetica .nav.white li a,
+body.helvetica .nav.white #logo h1 {
+  font-size: 18px;
+  font-weight: 300;
+}
+body.helvetica .art-subhead {
+  text-transform: none;
+  font-size: 26px;
+}
+body.helvetica .callout {
+  font-size: inherit;
+  line-height: inherit;
+  font-style: normal;
+  font-weight: bold;
+}
+body.helvetica .art-list ul li p {
+  font-size: 14px;
+  line-height: 24px;
+}
+body.helvetica .art-list-title {
+  font-weight: 100;
+}
+body.helvetica .art-list-title span {
+  font-weight: 300;
+  font-style: normal;
+  color: #bbb;
+}
 
 
 

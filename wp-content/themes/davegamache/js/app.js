@@ -1,47 +1,27 @@
-// var $container;
+var $container;
 
-// function triggerMasonry1() {
-//   // don't proceed if $container has not selected
-//   if ( !$container ) {
-//     return
-//   }
-//   $container.masonry({
-//     itemSelector : '.art-list-thoughts .art-list-item',
-//     columnWidth : 245
-//   });
-// }
-
-// function triggerMasonry2() {
-//   // don't proceed if $container has not selected
-//   if ( !$container ) {
-//     return
-//   }
-//   $container.masonry({
-//     itemSelector : '.art-list-articles .art-list-item',
-//     columnWidth : 502
-//   });
-// }
-
-// $(function(){
-//   $container = $('.art-list .art-list-thoughts');
-//   // trigger masonry on doc ready
-//   triggerMasonry1();
-// });
-
-// $(function(){
-//   $container = $('.art-list .art-list-articles');
-//   // trigger masonry on doc ready
-//   triggerMasonry2();
-// });
-
-function triggerMasonry1() {
-  //do nothing
+function triggerMasonry() {
+  // don't proceed if $container has not selected
+  if ( !$container ) {
+    return
+  }
+  $container.masonry({
+    itemSelector : '.art-list-item',
+    columnWidth : 335
+  });
 }
+
+
+$(function(){
+  $container = $('.art-list-articles');
+  // trigger masonry on doc ready
+  triggerMasonry();
+});
 
 // trigger masonry when fonts have loaded
 Typekit.load({
-  active: triggerMasonry1,
-  inactive: triggerMasonry1
+  active: triggerMasonry,
+  inactive: triggerMasonry
 });
 
 
