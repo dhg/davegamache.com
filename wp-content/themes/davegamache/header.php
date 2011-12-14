@@ -13,15 +13,15 @@
   <!-- <link rel="shortcut icon" href="favicon.ico"> -->
   <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script type="text/javascript" src="http://use.typekit.com/cjx7kil.js"></script>
-  <!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fittext.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
 </head>
 
-<body class="tester masonize">
+<body>
   <div class="wrapper">
-    <nav class="nav<?php if($postMeta["white_header"] == "true"){ ?> white<?php } if($postMeta["category"] != "weiner") { ?> fixed<?php } ?>">
+    <nav class="nav<?php if($postMeta["white_header"] == "true"){ ?> white<?php } if($postMeta["category"]) { ?> fixed<?php } ?>">
       <a id="logo" href="<?php bloginfo('url'); ?>">
         <h1>Dave Gamache</h1>
       </a>

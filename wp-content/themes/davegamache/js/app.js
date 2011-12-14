@@ -1,37 +1,20 @@
-var $container;
-
-function triggerMasonry() {
-  // don't proceed if $container has not selected
-  if ( !$container ) {
-    return
-  }
-  $container.masonry({
-    itemSelector : '.art-list .art-list-item',
-    columnWidth : 340
-  });
-}
-
-$(function(){
-  $container = $('.art-list ul');
-  // trigger masonry on doc ready
-  triggerMasonry();
-});
-
-// trigger masonry when fonts have loaded
-Typekit.load({
-  active: triggerMasonry,
-  inactive: triggerMasonry
-});
-
-
 $(document).ready(function() {
+
 
 
   var $artHeaderInner = $('.art-header-inner');
   var $artHeader = $('.art-header');
+  var $artTitle = $('.art-title');
+  var $artSubtitle = $('.art-subtitle');
+  var $artTime = $('.art-time');
+  var artTitleFontSize = parseInt($artTitle.css('font-size'));
   var $nav = $('.nav');
   var artHeaderInnerTop = parseInt($artHeaderInner.css('top'));
   var windowScroll;
+
+
+  $artTitle.fitText(1, { minFontSize: '40px' });
+
 
 
   $(window).scroll(function() {
@@ -55,11 +38,5 @@ $(document).ready(function() {
       'opacity' : 1-(windowScroll/400)
     });
   });
-
-  // Fire up Masonry for articles page
-  // $('.art-list ul').masonry({
-  //   itemSelector : '.art-list-item',
-  //   columnWidth : 340
-  // });
 
 });
