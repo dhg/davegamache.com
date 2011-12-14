@@ -21,7 +21,7 @@
 
 <body class="tester masonize">
   <div class="wrapper">
-    <nav class="nav<?php if($postMeta["white_header"] == "true"){ ?> white<?php } if($postMeta["category"] == "article") { ?> fixed<?php } ?>">
+    <nav class="nav<?php if($postMeta["white_header"] == "true"){ ?> white<?php } if($postMeta["category"] != "weiner") { ?> fixed<?php } ?>">
       <a id="logo" href="<?php bloginfo('url'); ?>">
         <h1>Dave Gamache</h1>
       </a>

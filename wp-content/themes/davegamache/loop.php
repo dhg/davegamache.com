@@ -10,7 +10,7 @@
         $summary = get_post_meta($post->ID, 'summary');
         $summary = $summary[0];
       ?>
-        <li class="art-list-item <?php if($category == "article"){ echo "is-full-article"; }?>">
+        <li class="art-list-item">
           <div class="art-list-time"><?php the_time('F jS, Y') ?></div>
           <h2 class="art-list-title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

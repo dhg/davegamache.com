@@ -230,11 +230,12 @@ a:hover {
 }
 
 /* If simple article */
-.simple .art-header {
-  padding-top: 200px;
+/*.simple .art-header {
+  padding-top: 300px;
   height: auto;
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto;
+  position: relative;
 }
 .simple .art-body-inner {
   padding-top: 20px;
@@ -243,9 +244,10 @@ a:hover {
   display: none;
 }
 .simple .art-title {
-  font-size: 100px;
-  line-height: 90px;
+  font-size: 80px;
+  line-height: 70px !important;
   text-align: left;
+  position: relative;
   margin-left: 0;
   margin-right: 0;
 }
@@ -253,7 +255,17 @@ a:hover {
   text-align: left;
   margin-left: 0;
   margin-right: 0;
+  margin-bottom: 5px;
+}*/
+.simple .art-body {
+  background: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
 }
+/*.simple .art-header-inner {
+  position: static;
+}*/
 
 
 /*  List of Articles
@@ -655,8 +667,12 @@ body.tester .art-subhead */{
   text-transform: uppercase;
 }
 body.tester .art-list ul li .art-list-time {
-  display: none;
   font-family: inherit;
+  text-align: left;
+  float: none;
+  width: auto;
+  letter-spacing: 3px;
+  line-height: 20px;
 }
 body.tester .art-title {
   font-family: "proxima nova";
@@ -673,6 +689,9 @@ body.tester .art-subtitle {
   /*font-family: "proxima nova";*/
   /*font-weight: bold;*/
 }
+body.tester.masonize .art-list-title {
+  margin-bottom: 4px;
+}
 body.tester .art-time {
   font-family: inherit;
   font-size: 14px;
@@ -686,7 +705,9 @@ body.tester .art-subhead {
 body.tester .art-header-inner {
   top: 340px;
 }
-
+body.tester .art-list ul {
+  margin-top: 20px;
+}
 body.tester {
   font: 18px/30px ff-tisa-web-pro, "Georgia", serif;
 }
@@ -698,6 +719,9 @@ body.tester .full-article {
 
 body.tester .art-list ul li p {
   width: 65%;
+}
+.tester .art-list li:last-child {
+  border-bottom: 1px solid #ccc;
 }
 
 .tester #logo h1,
@@ -713,25 +737,36 @@ body.tester .art-list ul li p {
   font-family: "proxima nova"
 }
 
-.masonize.tester .art-list-articles {
-  margin-left: -25px;
+.masonize.tester .art-list ul {
+  margin-left: -40px;
 }
-.masonize.tester .art-list-articles li {
+.masonize.tester .art-list ul li {
   float: left;
-  width: 310px;
-  margin-left: 25px;
+  width: 300px;
+  margin-left: 40px;
+  padding: 20px 0;
 }
-.masonize.tester .art-list-articles li p {
+.masonize.tester .art-list ul li p {
   margin-left: 0 !important;
   width: auto !important;
 }
-.masonize.tester .art-list ul li p,
 .masonize.tester .art-list ul li h2 {
   width: auto;
+  line-height: 30px;
 }
-
-
-
+.masonize.tester .art-list-articles {
+  margin-bottom: 80px;
+}
+.masonize.tester .art-list {
+  padding-top: 120px;
+}
+/*.masonize.tester .art-list-section-title {
+  font-size: 55px;
+}*/
+.masonize.tester .art-list-section-subtitle {
+  /*font-size: 26px;*/
+  /*text-shadow: 4px 0 0 #fff, 0 4px 0 #fff, 0 -4px 0 #fff, -4px 0 0 #fff;*/
+}
 
 
 

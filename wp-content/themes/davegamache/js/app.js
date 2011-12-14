@@ -6,14 +6,13 @@ function triggerMasonry() {
     return
   }
   $container.masonry({
-    itemSelector : '.art-list-item',
-    columnWidth : 335
+    itemSelector : '.art-list .art-list-item',
+    columnWidth : 340
   });
 }
 
-
 $(function(){
-  $container = $('.art-list-articles');
+  $container = $('.art-list ul');
   // trigger masonry on doc ready
   triggerMasonry();
 });
@@ -42,7 +41,7 @@ $(document).ready(function() {
 
     //Slow scroll of .art-header-inner scroll and fade it out
     $artHeaderInner.css({
-      'top' : (artHeaderInnerTop-(windowScroll/3.5))+"px",
+      'top' : (artHeaderInnerTop-(windowScroll/3))+"px",
       'opacity' : 1-(windowScroll/550)
     });
 
