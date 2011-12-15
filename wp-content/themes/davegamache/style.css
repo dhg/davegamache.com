@@ -220,8 +220,8 @@ a:hover {
 }
 .art-subhead { /* Subheads are used to break up sections of an article */
   font-size: 20px;
-  line-height: 40px;
-  margin: 60px 0 10px;
+  line-height: 28px;
+  margin: 60px 0 15px;
   letter-spacing: 3px;
 }
 .callout { /* Callouts are like large pullquotes */

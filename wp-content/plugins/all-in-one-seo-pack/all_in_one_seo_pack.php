@@ -5,7 +5,7 @@
 Plugin Name: All in One SEO Pack
 Plugin URI: http://semperfiwebdesign.com
 Description: Out-of-the-box SEO for your Wordpress blog. <a href="options-general.php?page=all-in-one-seo-pack/aioseop.class.php">Options configuration panel</a> | <a href="http://wpplugins.com/plugin/50/all-in-one-seo-pack-pro-version">Upgrade to Pro Version</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mrtorbert%40gmail%2ecom&item_name=All%20In%20One%20SEO%20Pack&item_number=Support%20Open%20Source&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8">Donate</a> | <a href="http://semperfiwebdesign.com/forum/" >Support</a> |  <a href="https://www.amazon.com/wishlist/1NFQ133FNCOOA/ref=wl_web" target="_blank" title="Amazon Wish List">Amazon Wishlist</a>
-Version: 1.6.13.4
+Version: 1.6.13.8
 Author: Michael Torbert
 Author URI: http://michaeltorbert.com
 */
@@ -490,59 +490,13 @@ require_once( WP_PLUGIN_DIR . '/all-in-one-seo-pack/aioseop.class.php');
 global $aioseop_options;
 $aioseop_options = get_option('aioseop_options');
 
-
-
-/*
-add_option("aiosp_home_description", null, 'All in One SEO Plugin Home Description', 'yes');
-add_option("aiosp_home_title", null, 'All in One SEO Plugin Home Title', 'yes');
-add_option("aiosp_donate", 0, 'All in One SEO Pack Donate', 'no');
-add_option("aiosp_can", 1, 'All in One SEO Pack Canonical URLs', 'yes');
-add_option("aiosp_rewrite_titles", 1, 'All in One SEO Plugin Rewrite Titles', 'yes');
-add_option("aiosp_use_categories", 0, 'All in One SEO Plugin Use Categories', 'yes');
-add_option("aiosp_category_noindex", 1, 'All in One SEO Plugin Noindex for Categories', 'yes');
-add_option("aiosp_archive_noindex", 1, 'All in One SEO Plugin Noindex for Archives', 'yes');
-add_option("aiosp_tags_noindex", 0, 'All in One SEO Plugin Noindex for Tag Archives', 'yes');
-add_option("aiosp_generate_descriptions", 1, 'All in One SEO Plugin Autogenerate Descriptions', 'yes');
-add_option("aiosp_post_title_format", '%post_title% | %blog_title%', 'All in One SEO Plugin Post Title Format', 'yes');
-add_option("aiosp_page_title_format", '%page_title% | %blog_title%', 'All in One SEO Plugin Page Title Format', 'yes');
-add_option("aiosp_dynamic_postspage_keywords", 1, 'All in One SEO Plugin Dynamic Posts Page Keywords', 'yes');
-add_option("aiosp_category_title_format", '%category_title% | %blog_title%', 'All in One SEO Plugin Category Title Format', 'yes');
-add_option("aiosp_archive_title_format", '%date% | %blog_title%', 'All in One SEO Plugin Archive Title Format', 'yes');
-add_option("aiosp_tag_title_format", '%tag% | %blog_title%', 'All in One SEO Plugin Tag Title Format', 'yes');
-add_option("aiosp_search_title_format", '%search% | %blog_title%', 'All in One SEO Plugin Search Title Format', 'yes');
-add_option("aiosp_description_format", '%description%', 'All in One SEO Plugin Description Format', 'yes');
-add_option("aiosp_paged_format", ' - Part %page%', 'All in One SEO Plugin Paged Format', 'yes');
-add_option("aiosp_404_title_format", 'Nothing found for %request_words%', 'All in One SEO Plugin 404 Title Format', 'yes');
-add_option("aiosp_post_meta_tags", '', 'All in One SEO Plugin Additional Post Meta Tags', 'yes');
-add_option("aiosp_page_meta_tags", '', 'All in One SEO Plugin Additional Post Meta Tags', 'yes');
-add_option("aiosp_home_meta_tags", '', 'All in One SEO Plugin Additional Home Meta Tags', 'yes');
-add_option("aiosp_do_log", null, 'All in One SEO Plugin write log file', 'yes');
-*/
-
-//$role = get_role('administrator');
-//$role->add_cap('Edit AIOSEOP Options');
-//$role->add_cap('Edit AIOSEOP on Posts/Pages');
-
 ////checking to see if things need to be updated
-
-//if_post('turn-on'){
-	
-	/*   automattic?
-if(!get_option('aioseop_options')){
-	aioseop_mrt_fix_meta(); //move this to the if also 
-	aioseop_mrt_mkarry();
-	}
-*/
 
 if(isset($_POST['aioseop_migrate'])) aioseop_mrt_fix_meta();
 if(isset($_POST['aioseop_migrate_options'])) aioseop_mrt_mkarry();
 if(!get_option('aiosp_post_title_format') && !get_option('aioseop_options')) aioseop_mrt_mkarry();
 
-//}end _post('turn_on')
-
-
 ////end checking to see if things need to be updated
-
 
 function aioseop_mrt_fix_meta(){
 global $wpdb;
@@ -576,10 +530,12 @@ $naioseop_options = array(
 "aiosp_description_format"=>'%description%',
 "aiosp_404_title_format"=>'Nothing found for %request_words%',
 "aiosp_paged_format"=>' - Part %page%',
+"aiosp_google_analytics_id"=>null,
+"aiosp_ga_track_outbound_links"=>0,
 "aiosp_use_categories"=>0,
 "aiosp_dynamic_postspage_keywords"=>1,
-"aiosp_category_noindex"=>1,
-"aiosp_archive_noindex"=>1,
+"aiosp_category_noindex"=>0,
+"aiosp_archive_noindex"=>0,
 "aiosp_tags_noindex"=>0,
 "aiosp_cap_cats"=>1,
 "aiosp_generate_descriptions"=>0,
@@ -613,15 +569,10 @@ add_option('aioseop_options',$naioseop_options);
 echo "<div class='updated fade' style='background-color:green;border-color:green;'><p><strong>Updating SEO configuration options in database</strong></p></div";
 
 }
-//if( function_exists( 'is_site_admin' ) ) {
 
 function aioseop_activation_notice(){
 	global $aioseop_options;
-				if(function_exists('admin_url')){
-				echo '<div class="error fade" style="background-color:red;"><p><strong>All in One SEO Pack must be configured. Go to <a href="' . admin_url( 'options-general.php?page=all-in-one-seo-pack/aioseop.class.php' ) . '">the admin page</a> to enable and configure the plugin.</strong><br />All in One SEO Pack now supports <em>Custom Post Types</em>.</p></div>';
-}else{
-		echo '<div class="error fade" style="background-color:red;"><p><strong>All in One SEO Pack must be configured. Go to <a href="' . get_option('siteurl') . 'options-general.php?page=all-in-one-seo-pack/aioseop.class.php' . '">the admin page</a> to enable and configure the plugin.</strong></p></div>';
-}
+				echo '<div class="error fade" style="background-color:red;"><p><strong>All in One SEO Pack must be configured. Go to <a href="' . admin_url( 'options-general.php?page=all-in-one-seo-pack/aioseop.class.php' ) . '">the admin page</a> to enable and configure the plugin.</strong><br />All in One SEO Pack now supports <em>Custom Post Types</em> and Google Analytics.</p></div>';
 }
 
 if($aioseopcc){
@@ -648,7 +599,7 @@ if($aioseop_options['aiosp_can'] == '1' || $aioseop_options['aiosp_can'] == 'on'
 }
 
 function aioseop_get_version(){
-	return '1.6.13.4';
+	return '1.6.13.8';
 }
 
 function add_plugin_row($links, $file) {
@@ -659,15 +610,12 @@ echo '</td>';
 
 }
 
-
 $aiosp = new All_in_One_SEO_Pack();	
 
 ////////new stuff
 
-//add_action('quick_edit_custom_box','mys',10,2);
-
 function mys($col, $type){
-	 
+
 	?>
 	
 	
@@ -688,7 +636,6 @@ add_action('load-edit.php','addmycolumns',1);
 function addmycolumns(){
 	$aioseop_options = get_option('aioseop_options');
 	$aiosp_posttypecolumns = $aioseop_options['aiosp_posttypecolumns'];
-//print_r($aiosp_posttypecolumns);
 
 	if ( !isset($_GET['post_type']) ) $post_type = 'post';
 		else    $post_type = $_GET['post_type'];
@@ -739,13 +686,17 @@ add_action('init', array($aiosp, 'init'));
 add_action('wp_head', array($aiosp, 'wp_head'));
 add_action('template_redirect', array($aiosp, 'template_redirect'));
 add_action('admin_menu', array($aiosp, 'admin_menu'));
-//add_action('admin_head',array($aiosp, 'seo_mrt_admin_head');
 add_action('admin_menu', 'aioseop_meta_box_add');
 add_action('admin_menu', 'aioseop_mrt_nap');
 
+////analytics
+if($aioseop_options['aiosp_google_analytics_id'])
+	add_action('wp_footer', array($aiosp, 'aiosp_google_analytics'));
+
+
+
+
 function aioseop_mrt_nap(){
-//	add_object_page('All in One SEO Pack','All in One SEO Pack','administrator','aioseop','sometop2');
-//	add_object_page('All in One SEO Pack', 'SEO', 8, "__FILE__", 'aioseop_mrt_nap_menu2a','http://65.190.51.165/aioseo/wp-content/plugins/all-in-one-seo-pack/images/globe.png');
 	add_submenu_page("__FILE__", 'Settings', 'Settings', 'manage_options', '__FILE__', 'aioseop_mrt_nap_menu2a');
 	add_submenu_page("__FILE__", 'Tools', 'Tools', 'manage_options', 'subpageb', 'aioseop_mrt_nap_menu2b');
 }
@@ -770,56 +721,50 @@ if( ($_POST['aiosp_enabled'] == null && $aioseop_options['aiosp_enabled']!='1') 
 
 // The following two functions are GPLed from Sarah G's Page Menu Editor, http://wordpress.org/extend/plugins/page-menu-editor/.
 function aioseop_list_pages($content){
+	global $wp_version;
 	$matches = array();
 	if (preg_match_all('/<li class="page_item page-item-(\d+)/i', $content, $matches)) {
 		update_postmeta_cache(array_values($matches[1]));
 		unset($matches);
-		$pattern = '/<li class="page_item page-item-(\d+)([^\"]*)"><a href=\"([^\"]+)" title="([^\"]+)">([^<]+)<\/a>/i';
+		if ( $wp_version >= 3.3 ) {
+			$pattern = '@<li class="page_item page-item-(\d+)([^\"]*)"><a href=\"([^\"]+)">(.*?)</a>@is';
+		} else {
+			$pattern = '@<li class="page_item page-item-(\d+)([^\"]*)"><a href=\"([^\"]+)" title="([^\"]+)">(.*?)</a>@is';
+		}
 		return preg_replace_callback($pattern, "aioseop_filter_callback", $content);
 	}
 	return $content;
 	}
 
 function aioseop_filter_callback($matches) {
-	global $wpdb;
+	global $wpdb, $wp_version;
+	if ( $wp_version >= 3.3 ) {
+		$t = 4;
+	} else {
+		$t = 5;
+	}
 	if ($matches[1] && !empty($matches[1])) $postID = $matches[1];
 	if (empty($postID)) $postID = get_option("page_on_front");
 	$title_attrib = stripslashes(get_post_meta($postID, '_aioseop_titleatr', true));
 	$menulabel = stripslashes(get_post_meta($postID, '_aioseop_menulabel', true));
-	if (empty($menulabel)) $menulabel = $matches[4];
+	if (empty($menulabel)) $menulabel = $matches[$t];
 	if (!empty($title_attrib)) :
 		$filtered = '<li class="page_item page-item-'.$postID.$matches[2].'"><a href="'.$matches[3].'" title="'.$title_attrib.'">'.$menulabel.'</a>';
 	else :
-    	$filtered = '<li class="page_item page-item-'.$postID.$matches[2].'"><a href="'.$matches[3].'" title="'.$matches[4].'">'.$menulabel.'</a>';
+    	$filtered = '<li class="page_item page-item-'.$postID.$matches[2].'"><a href="'.$matches[3].'" title="'.$matches[$t].'">'.$menulabel.'</a>';
 	endif;
 	return $filtered;
 }
 
-if (substr($aiosp->wp_version, 0, 3) < '2.5') {
-        add_action('dbx_post_advanced', array($aiosp, 'add_meta_tags_textinput'));
-        add_action('dbx_page_advanced', array($aiosp, 'add_meta_tags_textinput'));
-}
-
 function aioseop_meta_box_add() {
-	if ( function_exists('add_meta_box') ) {
-		if( function_exists('get_post_types')){		
-			$mrt_aioseop_pts=get_post_types('','names'); 
-			$aioseop_options = get_option('aioseop_options');
-			$aioseop_mrt_cpt = $aioseop_options['aiosp_enablecpost'];
-			foreach ($mrt_aioseop_pts as $mrt_aioseop_pt) {
-				if($mrt_aioseop_pt == 'post' || $mrt_aioseop_pt == 'page' || $aioseop_mrt_cpt){
-					add_meta_box('aiosp',__('All in One SEO Pack', 'all_in_one_seo_pack'),'aiosp_meta',$mrt_aioseop_pt);
-				}
+		$mrt_aioseop_pts=get_post_types('','names'); 
+		$aioseop_options = get_option('aioseop_options');
+		$aioseop_mrt_cpt = $aioseop_options['aiosp_enablecpost'];
+		foreach ($mrt_aioseop_pts as $mrt_aioseop_pt) {
+			if($mrt_aioseop_pt == 'post' || $mrt_aioseop_pt == 'page' || $aioseop_mrt_cpt){
+				add_meta_box('aiosp',__('All in One SEO Pack', 'all_in_one_seo_pack'),'aiosp_meta',$mrt_aioseop_pt);
 			}
-		}else{
-			add_meta_box('aiosp',__('All in One SEO Pack', 'all_in_one_seo_pack'),'aiosp_meta','post');
-			add_meta_box('aiosp',__('All in One SEO Pack', 'all_in_one_seo_pack'),'aiosp_meta','page');
 		}
-
-	} else {
-		add_action('dbx_post_advanced', array($aiosp, 'add_meta_tags_textinput'));
-		add_action('dbx_page_advanced', array($aiosp, 'add_meta_tags_textinput'));
-	}
 }
 
 function aiosp_meta() {
@@ -843,7 +788,7 @@ function aiosp_meta() {
 		</script>
 		<input value="aiosp_edit" type="hidden" name="aiosp_edit" />
 		
-		<a target="__blank" href="http://semperfiwebdesign.com/forum/"><?php _e('Click here for Support', 'all_in_one_seo_pack') ?></a>
+		<a target="__blank" href="http://semperplugins.com/plugins/all-in-one-seo-pack-pro-version/"><?php _e('Upgrade to All in One SEO Pack Pro Version', 'all_in_one_seo_pack') ?></a>
 		<table style="margin-bottom:40px">
 		<tr>
 		<th style="text-align:left;" colspan="2">

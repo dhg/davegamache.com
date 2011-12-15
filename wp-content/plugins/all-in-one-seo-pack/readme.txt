@@ -1,9 +1,9 @@
 === All in One SEO Pack ===
 Contributors: hallsofmontezuma
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mrtorbert%40gmail%2ecom&item_name=All%20In%20One%20SEO%20Pack&item_number=Support%20Open%20Source&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8
-Tags: seo,meta,keywords,description,title,post, search engine optimization, google
-Requires at least: 2.8
-Tested up to: 3.2.1
+Tags: seo, search engine optimization, google
+Requires at least: 3.0
+Tested up to: 3.3
 Stable tag: trunk
  
 Automatically optimizes your Wordpress blog for Search Engines (Search Engine Optimization).
@@ -22,6 +22,7 @@ Automatically optimizes your Wordpress blog for Search Engines (Search Engine Op
 Some features:
 
 
+* Google Analytics support
 * Support for Custom Post Types
 * Advanced Canonical URLs
 * Fine tune Page Navigational Links 
