@@ -35,10 +35,19 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   vertical-align: baseline; }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, time, nav, section {
   display: block; }
+html, body, .wrapper {
+  min-height: 100%;
+}
 
 
 /* Body
 ================================================== */
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+}
 body {
   overflow-x: hidden;
   font: 17px/28px ff-meta-serif-web-pro, "Georgia", serif;
@@ -91,13 +100,15 @@ a:hover {
 .nav,
 .art-header-inner,
 .footer,
-.art-list {
+.art-list,
+.abt {
   width: 980px;
 }
 .nav,
 .art-body-inner,
 .footer,
-.art-list {
+.art-list,
+.abt {
   position: relative;
   margin: 0 auto;
 }
@@ -125,16 +136,22 @@ a:hover {
 }
 .nav-primary li {
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 10px;
+  font-weight: 500;
 }
 #logo h1,
+.nav-primary li,
 .nav-primary li a {
   font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
   color: #000;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 30px;
-  font-weight: 700;
+}
+#logo h1 {
+  font-size: 22px;
+  letter-spacing: -3px;
+
 }
 .nav li:first-child {
   margin-left: 0; /* Remove left margin from the first nav li */
@@ -238,7 +255,6 @@ a:hover {
 }
 /* For simple, white background posts */
 .simple .art-body {
-  background: none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
@@ -300,14 +316,15 @@ a:hover {
 /*  Footer
 ================================================== */
 .footer {
-  border-top: 1px solid #000;
-  padding: 10px 0 100px;
+  border-top: 1px solid #ccc;
+  padding: 30px 0 40px;
   overflow: hidden;
 }
 .footer,
 .footer a {
-  font-size: 15px;
-  color: #000;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #777;
   font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
 }
 .footer a:hover {
@@ -336,7 +353,7 @@ a:hover {
 }
 /* Remove prev & next links on loop */
 .art-list + .footer .footer-nav a,
-.about-me + .footer .footer-nav a {
+.abt + .footer .footer-nav a {
   visibility: hidden;
 }
 
@@ -347,6 +364,7 @@ a:hover {
   border-bottom-color: rgba(255,255,255,.3);
 }
 .nav.white li a,
+.nav.white li,
 .nav.white #logo h1{
   color: #fff;
   text-shadow: 0 0 8px rgba(0,0,0,.5);
@@ -363,10 +381,32 @@ a:hover {
 }
 
 
+/*  About page
+================================================== */
+.abt {
+  padding: 200px 0 100px;
+  list-style: none;
+}
+.abt .abt-header {
+  font-size: 80px;
+  line-height: 1;
+}
+.abt .abt-subheader {
+  font-size: 24px;
+  text-transform: none;
+  font-style: italic;
+  color: #777;
+}
+.abt-body {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+}
+
+
 /*  Responsive
 ================================================== */
-
-
 @media only screen and (max-width: 1080px) {
   .nav,
   .art-body-inner,
@@ -374,7 +414,7 @@ a:hover {
   .art-header-inner,
   .footer,
   .art-list,
-  .about-me {
+  .abt {
     width: 90%;
   }
   .nav,
@@ -386,7 +426,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
   .art-body-inner ul {
     margin-left: 20px;
   }
@@ -404,6 +444,9 @@ a:hover {
   .art-header {
     height: 700px;
   }
+  .simple .art-header {
+    height: 500px;
+  }
   .art-header-inner {
     top: 240px;
   }
@@ -419,77 +462,33 @@ a:hover {
 }
 
 
-
-
 @media only screen and (max-width: 500px) {
-  /*.nav {
-    height: 55px;
-    padding-top: 25px;
-  } */
-  .nav li {
-    margin-left: 30px;
+  .nav-primary li {
+    margin-left: 10px;
   }
-  .nav li a,
   .nav #logo h1 {
+    font-size: 16px;
+    letter-spacing: -2px;
+  }
+  .nav li a {
     font-size: 12px;
   }
   .art-header {
-    height: 700px;
+    height: 500px;
   }
-  /*.art-list-item p {
-    font-size: 14px;
-    line-height: 20px;
-  }*/
-  /*
-  .art-header {
-    height: 220px;
-    padding-top: 160px;
+  .simple .art-header {
+    height: 400px;
   }
-  .art-time {
-    font-size: 17px;
-  }
-  .art-title {
-    font-size: 70px;
-    line-height: 65px;
-  }
-  .simple .art-title {
-    font-size: 60px;
-    line-height: 60px;
-    margin-top: 0;
-  }
-  .art-subtitle {
-    font-size: 17px;
-    line-height: 22px;
+  .art-header-inner {
+    top: 160px;
   }
   .art-body-inner {
-    padding-top: 40px;
+    padding-top: 60px;
   }
-  .art-subhead {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 15px;
+  .abt-body {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
   }
-  .about-list {
-    font-size: 40px;
-    line-height: 42px;
-  }
-  .callout {
-    font-size: 18px;
-    line-height: 26px;
-  }
-  .art-list {
-    padding-bottom: 20px;
-  }
-  .art-body-inner ul {
-    margin-bottom: 15px;
-  }*/
-  .art-header-inner {
-    top: 260px;
-  }
-  /*.art-title {
-    font-size: 50px;
-    line-height: 45px;
-  }*/
   body {
     font-size: 15px;
     line-height: 24px;
@@ -498,7 +497,7 @@ a:hover {
     margin-bottom: 24px;
   }
   .footer {
-    padding-bottom: 40px;
+    padding: 10px 0 20px;
   }
   .back-to-top,
   .footer-nav {
@@ -520,6 +519,25 @@ a:hover {
   }
   .art-list + .footer .footer-nav {
     display: none;
+  }
+  .abt {
+    padding: 120px 0 20px;
+  }
+  .abt .abt-header {
+    font-size: 60px;
+  }
+  .abt .abt-subheader {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .nav,
+  .nav.fixed {
+    position: absolute;
+  }
+  .art-header-inner {
+    position: absolute;
   }
 }
 
@@ -565,8 +583,6 @@ img.right {
 
 
 
-
-
 .masonry,
 .masonry .masonry-brick {
   -webkit-transition-duration: 0.7s;
@@ -588,3 +604,78 @@ img.right {
        -o-transition-property: left, right, top;
           transition-property: left, right, top;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+CODING:
+- Scroll iPhone address bar out of the way
+- Make sure the black box doesn't show up on load
+✔ Code up the about page
+- Fix scroll on touch devices to just be normal scrolling
+- Refine some of the hover animations
+- Browser test across
+  - Chrome
+  - FF8
+  - FF7
+  - FF6
+  - FF5
+  - FF4
+  - FF3.6
+  - IE9
+  - IE8
+  - iPhone 4
+  - iPhone 3
+  - Android
+  - iPad
+- Order CSS properties
+- Clean up markup to adhere to the .art, .art-inner, .art-head/body/footer, .art-head-inner, .art-head-title convention
+- Make sure I'm minimizing the amount of markup needed (feels like I could use one less div almost everywhere?)
+- Make back to top link animated or not change the URL
+- Make the homepage just show the lastest "full article"
+- Consider anytype of animation on load?
+- Insert favicon
+
+
+
+CONTENT:
+- Add all of the summaries to all of the stories
+- Make sure all articles have a subheading
+- Fix all image sizes in articles to the new width
+- Fix all image links in the articles
+- Write a post about moving to wordpress
+- Write a post about why a new site
+- Publish video game poster post
+- Write a post about CSS and T1
+- Write email to one person post, cause otherwise it gets lost
+- Write the about content
+
+
+DESIGN:
+- Design the about/elsewhere page
+- Design some form of personal brand logo or something?
+- Create favicon
+
+
+
+
+
+
+
+*/
+
+
+
+

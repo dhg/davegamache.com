@@ -2,14 +2,13 @@
   /* Template Name: about */
   get_header();
 ?>
-<div class="background-image">
-  <img src="<?php bloginfo('url'); ?>/wp-content/uploads/2011/art-list-bg-3.jpg" alt="">
+
+<div class="abt">
+  <h1 class="abt-header">Greetings</h1>
+  <p class="abt-subheader">My name is Dave Gamache and I'm a designer at Twitter.</p>
+  <div class="abt-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue tellus, gravida quis iaculis quis, condimentum vitae lectus. Phasellus tellus risus, faucibus nec sodales in, semper quis nunc. Aliquam dignissim facilisis diam, et dapibus eros ornare quis. Morbi eu dolor ligula. Nunc dignissim fermentum ante id mollis. Duis ut dui nisi. Nulla tristique aliquam erat sed elementum. Integer sapien nisl, posuere lobortis hendrerit non, posuere at tortor.Aliquam iaculis nunc sit amet lorem aliquet placerat. Vestibulum sit amet dictum urna. Aenean justo leo, varius congue pretium pulvinar, sollicitudin a nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mauris et libero ullamcorper fringilla. Proin varius turpis quis ligula dignissim mollis. Praesent nibh nisl, blandit ut rhoncus eget, mattis vitae odio. Aenean convallis convallis est, quis placerat ante interdum eu. Nulla elit augue, vehicula et rhoncus quis, aliquet at eros. Phasellus tempor hendrerit nulla at facilisis. Cras interdum, felis id eleifend ornare, ante nunc pulvinar lectus, non sollicitudin lacus turpis eget mi. Proin tincidunt interdum magna ut mollis.</p>
+  </div>
 </div>
-<section class="about-me">
-  <p class="about-list">
-    I design at <a class="twitter-link" href="http://www.twitter.com/dhg">Twitter</a> in my hometown of San Francisco, authored the <a class="skeleton-link" href="http://www.getskeleton.com">Skeleton Boilerplate</a> and <a class="redditate-link" href="http://www.redditate.com">Redditate</a>, <a class="flickr-link" href="http://www.flickr.com/photos/dhgamache/">adventure</a> whenever possible, play <a class="xbox-link" href="http://live.xbox.com/en-US/Profile?gamertag=hexuus">games</a>, and daydream about the future.
-  </p>
-  <p class="contact">Wanna chat? Email me at hi@davegamache.com,</p>
-</section>
 
 <?php get_footer(); ?>

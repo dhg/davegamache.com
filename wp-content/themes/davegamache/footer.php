@@ -10,8 +10,8 @@
         <?php echo next_post_link('%link', 'Next'); ?>
       </div>
       <aside class="offsite-links">
-        <a class="twitter-link" href="http://www.twitter.com/dhg">Twitter</a> |
-        <a class="dribbble-link" href="http://dribbble.com/dhgamache">Dribble</a> |
+        <a class="twitter-link" href="http://www.twitter.com/dhg">Twitter</a> /
+        <a class="dribbble-link" href="http://dribbble.com/dhgamache">Dribbble</a> /
         <a class="rss-link" href="<?php bloginfo('rss2_url'); ?>">RSS</a>
       </aside>
     </footer>

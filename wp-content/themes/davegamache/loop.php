@@ -2,8 +2,6 @@
   <ul class="art-list-body">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
       <?php
-        $category = get_the_category();
-        $category =  $category[0]->cat_name;
         $summary = get_post_meta($post->ID, 'summary');
         $summary = $summary[0];
       ?>

@@ -9,8 +9,8 @@
   <meta name="description" content="Dave Gamache: Designer and Developer at Twitter in San Francisco">
   <meta name="author" content="Dave Gamache, @dhg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-  <!-- <link rel="shortcut icon" href="favicon.ico"> -->
   <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script type="text/javascript" src="http://use.typekit.com/cjx7kil.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -23,10 +23,11 @@
   <div class="wrapper">
     <nav class="nav<?php if($postMeta["white_header"] == "true"){ ?> white<?php } if($postMeta["category"]) { ?> fixed<?php } ?>">
       <a id="logo" href="<?php bloginfo('url'); ?>">
-        <h1>Dave Gamache</h1>
+        <h1>DG</h1>
       </a>
       <ul class="nav-primary">
         <li><a href="<?php bloginfo('url'); ?>/articles">Articles</a></li>
+        <li>/</li>
         <li><a href="<?php bloginfo('url'); ?>/about">About</a></li>
       </ul>
     </nav>
