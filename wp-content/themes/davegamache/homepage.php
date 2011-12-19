@@ -1,12 +1,9 @@
 <?php
+  query_posts('cat_name=article&showposts=1');
+  if ( have_posts() ) while ( have_posts() ) : the_post();
   $postMeta = getPostMetadata($post->ID);
   include ("header.php");
 ?>
-
-
-
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
 
   <article class="art<?php if($postMeta["simple_art"] == "true"){ ?> simple<?php } ?>">
     <header class="art-header<?php if($postMeta["white_header"] == "true"){ ?> white<?php } ?>" style="background-image: url(<?php echo $postMeta["bg_image"]; ?>)">

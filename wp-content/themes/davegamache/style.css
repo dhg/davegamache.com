@@ -85,6 +85,9 @@ a {
 }
 a:hover {
   color: #8d0d19;
+  -webkit-transition: color .4s ease-in-out;
+     -moz-transition: color .4s ease-in-out;
+          transition: color .4s ease-in-out;
 }
 
 
@@ -112,6 +115,7 @@ a:hover {
   position: relative;
   margin: 0 auto;
 }
+
 
 /*  Nav
 ================================================== */
@@ -156,6 +160,7 @@ a:hover {
 .nav li:first-child {
   margin-left: 0; /* Remove left margin from the first nav li */
 }
+
 
 /*  Article
 ================================================== */
@@ -223,7 +228,8 @@ a:hover {
   max-width: 640px;
   padding: 80px 0 50px;
 }
-.art-body-inner ul { /* For lists in the article body */
+.art-body-inner ul,
+.art-body-inner ol { /* For lists in the article body */
   margin-bottom: 26px;
 }
 .art-body-inner ul li {
@@ -255,20 +261,21 @@ a:hover {
 }
 /* For simple, white background posts */
 .simple .art-body {
+  background: none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
 }
 
+
 /*  List of Articles
 ================================================== */
 .art-list {
-  padding: 100px 0 0;
+  padding: 120px 0 0;
 }
 .art-list-body {
   overflow: hidden;
   position: relative;
-  margin-top: 20px;
 }
 .art-list-item {
   list-style: none;
@@ -357,6 +364,7 @@ a:hover {
   visibility: hidden;
 }
 
+
 /*  White Reverse Theme
 ================================================== */
 /* Nav */
@@ -408,9 +416,9 @@ a:hover {
 /*  Responsive
 ================================================== */
 @media only screen and (max-width: 1080px) {
+  /* Set all of the 980 containers to flexible width */
   .nav,
   .art-body-inner,
-  .simple .art-header,
   .art-header-inner,
   .footer,
   .art-list,
@@ -421,13 +429,41 @@ a:hover {
   .art-header-inner {
     margin-left: -45%;
   }
-  .art-title {
-    line-height: 1;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* Everything becomes scrolling and non-fading */
+  .nav,
+  .nav.fixed {
+    position: relative;
+  }
+  .art-header-inner {
+    position: relative;
+  }
+  /* Articles no longer have fixed heights */
+  .art-header {
+    height: auto;
+    padding-bottom: 100px;
+  }
+  /* Remove bottom space out if articles doesn't have a background */
+  .simple .art-header {
+    padding-bottom: 0;
+  }
+  .art-header-inner {
+    top: 0;
+    margin-top: 240px;
+  }
+  .art-list {
+    padding-top: 0;
+  }
+  .abt {
+    padding: 40px 0;
   }
 }
 
 @media only screen and (max-width: 780px) {
-  .art-body-inner ul {
+  .art-body-inner ul,
+  .art-body-inner ol {
     margin-left: 20px;
   }
   .art-title {
@@ -441,26 +477,13 @@ a:hover {
     padding-top: 25px;
     height: 55px;
   }
-  .art-header {
-    height: 700px;
-  }
-  .simple .art-header {
-    height: 500px;
-  }
-  .art-header-inner {
-    top: 240px;
-  }
   .art-list-item-title-and-time,
   .art-list-item p {
     float: none;
     margin-left: 0;
     width: auto;
   }
-  .art-list {
-    padding-top: 70px;
-  }
 }
-
 
 @media only screen and (max-width: 500px) {
   .nav-primary li {
@@ -473,21 +496,18 @@ a:hover {
   .nav li a {
     font-size: 12px;
   }
-  .art-header {
-    height: 500px;
-  }
-  .simple .art-header {
-    height: 400px;
-  }
-  .art-header-inner {
-    top: 160px;
-  }
-  .art-body-inner {
-    padding-top: 60px;
-  }
   .abt-body {
     -moz-column-count: 1;
     -webkit-column-count: 1;
+  }
+  .art-header {
+    padding-bottom: 50px;
+  }
+  .art-header-inner {
+    margin-top: 180px;
+  }
+  .art-body-inner {
+    padding-top: 30px;
   }
   body {
     font-size: 15px;
@@ -520,24 +540,11 @@ a:hover {
   .art-list + .footer .footer-nav {
     display: none;
   }
-  .abt {
-    padding: 120px 0 20px;
-  }
   .abt .abt-header {
-    font-size: 60px;
+    font-size: 50px;
   }
   .abt .abt-subheader {
     font-size: 18px;
-  }
-}
-
-@media only screen and (max-device-width: 1024px) {
-  .nav,
-  .nav.fixed {
-    position: absolute;
-  }
-  .art-header-inner {
-    position: absolute;
   }
 }
 
@@ -580,9 +587,6 @@ img.right {
 .art-list {
     zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
-
-
-
 .masonry,
 .masonry .masonry-brick {
   -webkit-transition-duration: 0.7s;
@@ -590,14 +594,12 @@ img.right {
        -o-transition-duration: 0.7s;
           transition-duration: 0.7s;
 }
-
 .masonry {
   -webkit-transition-property: height, width;
      -moz-transition-property: height, width;
        -o-transition-property: height, width;
           transition-property: height, width;
 }
-
 .masonry .masonry-brick {
   -webkit-transition-property: left, right, top;
      -moz-transition-property: left, right, top;
@@ -621,11 +623,18 @@ img.right {
 
 
 CODING:
-- Scroll iPhone address bar out of the way
 - Make sure the black box doesn't show up on load
 ✔ Code up the about page
-- Fix scroll on touch devices to just be normal scrolling
+✔ Fix scroll on touch devices to just be normal scrolling
 - Refine some of the hover animations
+✔ Make the homepage just show the lastest "full article"
+✔ Make back to top link animated or not change the URL
+- Consider anytype of animation on load?
+- Insert favicon
+- Clean up markup to adhere to the .art, .art-inner, .art-head/body/footer, .art-head-inner, .art-head-title convention
+- Make sure I'm minimizing the amount of markup needed (feels like I could use one less div almost everywhere?)
+- Order CSS properties
+- Cleanup JS
 - Browser test across
   - Chrome
   - FF8
@@ -640,17 +649,12 @@ CODING:
   - iPhone 3
   - Android
   - iPad
-- Order CSS properties
-- Clean up markup to adhere to the .art, .art-inner, .art-head/body/footer, .art-head-inner, .art-head-title convention
-- Make sure I'm minimizing the amount of markup needed (feels like I could use one less div almost everywhere?)
-- Make back to top link animated or not change the URL
-- Make the homepage just show the lastest "full article"
-- Consider anytype of animation on load?
-- Insert favicon
+POSTPONE Scroll iPhone address bar out of the way
 
 
 
 CONTENT:
+- Write the about content
 - Add all of the summaries to all of the stories
 - Make sure all articles have a subheading
 - Fix all image sizes in articles to the new width
@@ -660,11 +664,10 @@ CONTENT:
 - Publish video game poster post
 - Write a post about CSS and T1
 - Write email to one person post, cause otherwise it gets lost
-- Write the about content
 
 
 DESIGN:
-- Design the about/elsewhere page
+✔ Design the about/elsewhere page
 - Design some form of personal brand logo or something?
 - Create favicon
 

@@ -24,9 +24,19 @@ $(document).ready(function() {
     isMobile = true;
   }
 
+  function isLargeViewport() {
+    if($nav.css('position') == "relative") {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   if(!isMobile) {
     $(window).scroll(function() {
-      slidingTitle();
+      if(isLargeViewport()) {
+        slidingTitle();
+      }
     });
   }
 
@@ -50,5 +60,10 @@ $(document).ready(function() {
       'opacity' : 1-(windowScroll/400)
     });
   }
+
+  $('.back-to-top a').click(function(e) {
+    e.preventDefault();
+    $(window).scrollTop(0);
+  })
 
 });

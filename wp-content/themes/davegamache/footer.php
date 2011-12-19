@@ -1,6 +1,6 @@
    <footer class="footer">
       <div class="back-to-top">
-        <a href="#">Back to top</a>
+        <a href="">Back to top</a>
       </div>
       <div class="footer-nav">
         <?php echo previous_post_link('%link', 'Previous'); ?>
