@@ -4,11 +4,12 @@
 ?>
 
 <div class="abt">
-  <h1 class="abt-header">Greetings</h1>
-  <p class="abt-subheader">My name is Dave Gamache and I'm a designer at Twitter.</p>
+  <h1 class="abt-header">Hi.</h1>
+  <p class="abt-subheader">My name is Dave Gamache and I'm a designer.</p>
   <div class="abt-body">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue tellus, gravida quis iaculis quis, condimentum vitae lectus. Phasellus tellus risus, faucibus nec sodales in, semper quis nunc. Aliquam dignissim facilisis diam, et dapibus eros ornare quis. Morbi eu dolor ligula. Nunc dignissim fermentum ante id mollis. Duis ut dui nisi. Nulla tristique aliquam erat sed elementum. Integer sapien nisl, posuere lobortis hendrerit non, posuere at tortor.Aliquam iaculis nunc sit amet lorem aliquet placerat. Vestibulum sit amet dictum urna. Aenean justo leo, varius congue pretium pulvinar, sollicitudin a nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mauris et libero ullamcorper fringilla. Proin varius turpis quis ligula dignissim mollis. Praesent nibh nisl, blandit ut rhoncus eget, mattis vitae odio. Aenean convallis convallis est, quis placerat ante interdum eu. Nulla elit augue, vehicula et rhoncus quis, aliquet at eros. Phasellus tempor hendrerit nulla at facilisis. Cras interdum, felis id eleifend ornare, ante nunc pulvinar lectus, non sollicitudin lacus turpis eget mi. Proin tincidunt interdum magna ut mollis.</p>
+    <p>I work at Twitter in my hometown of San Francisco and spend my days sketching, designing in Photoshop, writing scalable HTML/CSS/JS, listening to users and noodling with my team on the future of the product. When I'm not in the office, I spend my time exploring the city and beyond, adventuring in the wilderness, learning about the world, working on tiny side projects, writing, romancing the lovely <a href="http://www.twitter.com/ashleybatz">@ashleybatz</a>, reading trashy pre-teen novels, listening to music and playing games. And eating. I love eating. Feel free to hit me up on <a href="http://www.twitter.com/dhg">Twitter</a>, <a href="http://www.dribbble.com/dhgamache">Dribbble</a>, <a href="http://www.rdio.com/dhgamache">Rdio</a>, <a href="http://www.github.com/dhgamache">Github</a>, <a href="http://www.flickr.com/dhgamache">Flickr</a>, <a href="http://www.linkedin.com/dhgamache">Linkedin</a>, XBOX live or anywhere else you can find me (my username almost everywhere is dhgamache). Remember the most important things in life: <em>do what makes you happy, get it right and be a good person.</em></p>
   </div>
+  <p class="abt-signoff">For glory, <br /><span class="signature">Dave</span></p>
 </div>
 
 <?php get_footer(); ?>

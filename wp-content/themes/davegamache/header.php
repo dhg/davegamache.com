@@ -10,13 +10,17 @@
   <meta name="author" content="Dave Gamache, @dhg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico">
   <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
   <script type="text/javascript" src="http://use.typekit.com/cjx7kil.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fittext.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
 </head>
 
 <body>

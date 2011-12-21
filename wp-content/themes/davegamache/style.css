@@ -3,24 +3,6 @@
 Created by Dave Gamache exclusively for davegamache.com
 12/09/2011
 
-
-Table of Contents
-  - Reset & Basics
-  - Body
-  - Typography
-  - Links
-  - Layout
-  - Nav
-  - Article
-    - Header
-    - Body
-    - Simple
-  - Footer
-  - White Theme
-  - Responsive
-  - Misc
-
-
 */
 
 
@@ -82,12 +64,12 @@ em {
 a {
   color: #b20f1f;
   text-decoration: none;
+  -webkit-transition: color .2s ease-in-out;
+     -moz-transition: color .2s ease-in-out;
+          transition: color .2s ease-in-out;
 }
 a:hover {
   color: #8d0d19;
-  -webkit-transition: color .4s ease-in-out;
-     -moz-transition: color .4s ease-in-out;
-          transition: color .4s ease-in-out;
 }
 
 
@@ -123,11 +105,11 @@ a:hover {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -490px; /* Half width of nav */
-  z-index: 2;
-  padding-top: 40px;
   height: 70px;
+  padding-top: 40px;
+  margin-left: -490px; /* Half width of nav */
   border-bottom: 1px solid #000;
+  z-index: 2;
 }
 .nav.fixed {
   position: fixed;
@@ -147,15 +129,20 @@ a:hover {
 .nav-primary li,
 .nav-primary li a {
   font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
-  color: #000;
-  text-transform: uppercase;
+  font-weight: 700;
   font-size: 13px;
   line-height: 30px;
+  color: #000;
+  text-transform: uppercase;
 }
 #logo h1 {
+  width: 40px;
+  height: 30px;
+  margin-left: -7px;
   font-size: 22px;
+  text-indent: -9999px;
   letter-spacing: -3px;
-
+  background: url('images/small-logo.png') bottom center;
 }
 .nav li:first-child {
   margin-left: 0; /* Remove left margin from the first nav li */
@@ -199,10 +186,10 @@ a:hover {
   letter-spacing: -2px;
 }
 .art-subtitle {
+  margin-top: 4px;
   font-size: 14px;
   line-height: 1.3;
   letter-spacing: 4px;
-  margin-top: 4px;
 }
 
 /* If small header, make few adjustments */
@@ -217,9 +204,9 @@ a:hover {
 /* Body */
 .art-body {
   position: relative;
-  z-index: 100;
   width: 100%;
   background: #fff;
+  z-index: 100;
   -webkit-box-shadow: 0 -3px 3px rgba(0,0,0,.2);
      -moz-box-shadow: 0 -3px 3px rgba(0,0,0,.2);
           box-shadow: 0 -3px 3px rgba(0,0,0,.2);
@@ -237,14 +224,14 @@ a:hover {
 }
 .dropcap { /* First character on articles */
   float: left;
+  margin: 47px 10px 20px 0;
   font-size: 100px;
   line-height: 0;
-  margin: 47px 10px 20px 0;
 }
 .art-subhead { /* Subheads are used to break up sections of an article */
+  margin: 60px 0 15px;
   font-size: 20px;
   line-height: 28px;
-  margin: 60px 0 15px;
   letter-spacing: 3px;
 }
 .callout { /* Callouts are like large pullquotes */
@@ -274,14 +261,14 @@ a:hover {
   padding: 120px 0 0;
 }
 .art-list-body {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 .art-list-item {
+  padding: 40px 0;
   list-style: none;
   overflow: hidden;
   border-bottom: 1px solid #ccc;
-  padding: 40px 0;
 }
 .art-list-item:last-child {
   border-bottom: none;
@@ -297,12 +284,12 @@ a:hover {
   margin-bottom: 10px;
 }
 .art-list-time {
+  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
   font-size: 12px;
   line-height: 20px;
-  color: #999;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
+  text-transform: uppercase;
+  color: #999;
 }
 .art-list-title a {
   color: #000;
@@ -311,28 +298,28 @@ a:hover {
   color: #b20f1f;
 }
 .art-list-item p {
-  font-size: 16px;
-  line-height: 24px;
+  width: 65%;
   float: left;
   margin-left: 5%;
   margin-bottom: 0;
-  width: 65%;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 
 /*  Footer
 ================================================== */
 .footer {
-  border-top: 1px solid #ccc;
   padding: 30px 0 40px;
   overflow: hidden;
+  border-top: 1px solid #ccc;
 }
 .footer,
 .footer a {
+  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
   font-size: 13px;
   text-transform: uppercase;
   color: #777;
-  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
 }
 .footer a:hover {
   color: #000;
@@ -373,9 +360,12 @@ a:hover {
 }
 .nav.white li a,
 .nav.white li,
-.nav.white #logo h1{
+.nav.white #logo h1 {
   color: #fff;
   text-shadow: 0 0 8px rgba(0,0,0,.5);
+}
+.nav.white #logo h1 {
+  background-position: top center;
 }
 /* Art header */
 .art-header.white {
@@ -396,13 +386,14 @@ a:hover {
   list-style: none;
 }
 .abt .abt-header {
-  font-size: 80px;
+  font-size: 140px;
   line-height: 1;
+  text-transform: none;
 }
 .abt .abt-subheader {
   font-size: 24px;
-  text-transform: none;
   font-style: italic;
+  text-transform: none;
   color: #777;
 }
 .abt-body {
@@ -410,6 +401,12 @@ a:hover {
   -moz-column-gap: 20px;
   -webkit-column-count: 2;
   -webkit-column-gap: 20px;
+  margin-bottom: 28px;
+}
+.abt-signoff {
+  line-height: 1.3;
+  font-style: italic;
+  color: #777;
 }
 
 
@@ -436,22 +433,23 @@ a:hover {
   .nav,
   .nav.fixed {
     position: relative;
+    opacity: 1 !important; /* Important to override JS values */
   }
   .art-header-inner {
     position: relative;
+    top: 0 !important; /* Important to override JS values */
+    margin-top: 240px !important; /* Important to override JS values */
+    opacity: 1 !important; /* Important to override JS values */
   }
   /* Articles no longer have fixed heights */
   .art-header {
     height: auto;
     padding-bottom: 100px;
+    background-position: top center !important; /* Important to override JS values */
   }
   /* Remove bottom space out if articles doesn't have a background */
   .simple .art-header {
     padding-bottom: 0;
-  }
-  .art-header-inner {
-    top: 0;
-    margin-top: 240px;
   }
   .art-list {
     padding-top: 0;
@@ -480,8 +478,12 @@ a:hover {
   .art-list-item-title-and-time,
   .art-list-item p {
     float: none;
-    margin-left: 0;
     width: auto;
+    margin-left: 0;
+  }
+  .abt-body {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
   }
 }
 
@@ -496,15 +498,11 @@ a:hover {
   .nav li a {
     font-size: 12px;
   }
-  .abt-body {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-  }
   .art-header {
     padding-bottom: 50px;
   }
   .art-header-inner {
-    margin-top: 180px;
+    margin-top: 190px !important;
   }
   .art-body-inner {
     padding-top: 30px;
@@ -541,7 +539,7 @@ a:hover {
     display: none;
   }
   .abt .abt-header {
-    font-size: 50px;
+    font-size: 80px;
   }
   .abt .abt-subheader {
     font-size: 18px;
@@ -619,22 +617,10 @@ img.right {
 
 /*
 
-
-
-
 CODING:
-- Make sure the black box doesn't show up on load
-✔ Code up the about page
-✔ Fix scroll on touch devices to just be normal scrolling
-- Refine some of the hover animations
-✔ Make the homepage just show the lastest "full article"
-✔ Make back to top link animated or not change the URL
+
 - Consider anytype of animation on load?
-- Insert favicon
-- Clean up markup to adhere to the .art, .art-inner, .art-head/body/footer, .art-head-inner, .art-head-title convention
-- Make sure I'm minimizing the amount of markup needed (feels like I could use one less div almost everywhere?)
-- Order CSS properties
-- Cleanup JS
+- Minify all CSS & JS
 - Browser test across
   - Chrome
   - FF8
@@ -651,12 +637,7 @@ CODING:
   - iPad
 POSTPONE Scroll iPhone address bar out of the way
 
-
-
 CONTENT:
-- Write the about content
-- Add all of the summaries to all of the stories
-- Make sure all articles have a subheading
 - Fix all image sizes in articles to the new width
 - Fix all image links in the articles
 - Write a post about moving to wordpress
@@ -666,19 +647,26 @@ CONTENT:
 - Write email to one person post, cause otherwise it gets lost
 
 
-DESIGN:
-✔ Design the about/elsewhere page
-- Design some form of personal brand logo or something?
-- Create favicon
+------------------
 
 
-
-
-
+✔  Make sure the black box doesn't show up on load
+✔  Code up the about page
+✔  Fix scroll on touch devices to just be normal scrolling
+✔  Refine some of the hover animations
+✔  Make the homepage just show the lastest "full article"
+✔  Make back to top link animated or not change the URL
+✔  Insert favicon
+✔  Make sure I'm minimizing the amount of markup needed (feels like I could use one less div almost everywhere?)
+✔  Cleanup JS
+✔  Clean up markup to adhere to the .art, .art-inner, .art-head/body/footer, .art-head-inner, .art-head-title convention
+✔  Order CSS properties
+✔  Design the about/elsewhere page
+✔  Design some form of personal brand logo or something?
+✔  Create favicon
+✔  Write the about content
+✔  Add all of the summaries to all of the stories
+✔  Make sure all articles have a subheading
 
 
 */
-
-
-
-

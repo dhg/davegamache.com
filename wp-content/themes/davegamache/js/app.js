@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+  // Global vars
   var $artHeaderInner = $('.art-header-inner');
   var $artHeader = $('.art-header');
   var $artTitle = $('.art-title');
@@ -11,9 +11,10 @@ $(document).ready(function() {
   var isMobile;
   var windowScroll;
 
-
+  // Apply Fittext to article titles to make it scale responsively in a smooth fashion
   $artTitle.fitText(1, { minFontSize: '34px' });
 
+  // Identify if visitor on mobile with lame sniffing to remove parallaxing title
   if( navigator.userAgent.match(/Android/i) ||
       navigator.userAgent.match(/webOS/i) ||
       navigator.userAgent.match(/iPhone/i) ||
@@ -24,6 +25,7 @@ $(document).ready(function() {
     isMobile = true;
   }
 
+  // Identify if visitor has a large enough viewport for parallaxing title
   function isLargeViewport() {
     if($nav.css('position') == "relative") {
       return false;
@@ -32,6 +34,7 @@ $(document).ready(function() {
     }
   }
 
+  // If large viewport and not mobile, parallax the title
   if(!isMobile) {
     $(window).scroll(function() {
       if(isLargeViewport()) {
@@ -40,6 +43,14 @@ $(document).ready(function() {
     });
   }
 
+  // Window gets large enough, need to recalc all parallaxing title values
+  $(window).resize(function() {
+    if(isLargeViewport()) {
+      slidingTitle();
+    }
+  });
+
+  // Functional parallaxing calculations
   function slidingTitle() {
     //Get scroll position of window
     windowScroll = $(this).scrollTop();
@@ -61,6 +72,7 @@ $(document).ready(function() {
     });
   }
 
+  // Link to top of page without changing URL
   $('.back-to-top a').click(function(e) {
     e.preventDefault();
     $(window).scrollTop(0);
