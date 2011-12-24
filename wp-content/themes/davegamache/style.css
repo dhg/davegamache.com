@@ -609,6 +609,20 @@ img.right {
 
 
 
+/*.art-title {
+   width: 100%;
+   color: transparent !important;
+   text-shadow: 0 0 30px rgba(255,255,255,0.9) !important;
+   -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+           transition: all .5s ease-in-out;
+
+}
+.done-loading .art-title {
+  color: #fff !important;
+  text-shadow: none !important;
+}
+*/
 
 
 
@@ -618,9 +632,8 @@ img.right {
 /*
 
 CODING:
-
+- Make sure the black box doesn't show up on load
 - Consider anytype of animation on load?
-- Minify all CSS & JS
 - Browser test across
   - Chrome
   - FF8
@@ -635,7 +648,6 @@ CODING:
   - iPhone 3
   - Android
   - iPad
-POSTPONE Scroll iPhone address bar out of the way
 
 CONTENT:
 - Fix all image sizes in articles to the new width
@@ -650,7 +662,6 @@ CONTENT:
 ------------------
 
 
-✔  Make sure the black box doesn't show up on load
 ✔  Code up the about page
 ✔  Fix scroll on touch devices to just be normal scrolling
 ✔  Refine some of the hover animations
@@ -668,5 +679,8 @@ CONTENT:
 ✔  Add all of the summaries to all of the stories
 ✔  Make sure all articles have a subheading
 
+
+POSTPONE Scroll iPhone address bar out of the way
+POSTPONE Minify all CSS & JS
 
 */
