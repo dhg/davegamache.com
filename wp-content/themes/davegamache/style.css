@@ -184,6 +184,7 @@ a:hover {
   font-size: 100px;
   line-height: .9;
   letter-spacing: -2px;
+  width: 100%;
 }
 .art-subtitle {
   margin-top: 4px;
@@ -240,6 +241,7 @@ a:hover {
 .art-body-inner img {
   max-width: 100%;
   max-height: 600px;
+  margin-bottom: 26px;
 }
 .art-body-inner img.center {
   display: block;
@@ -346,9 +348,10 @@ a:hover {
   color: #e85d24;
 }
 /* Remove prev & next links on loop */
-.art-list + .footer .footer-nav a,
-.abt + .footer .footer-nav a {
-  visibility: hidden;
+.art-list + .footer .footer-nav,
+.abt + .footer .footer-nav {
+  text-indent: -9999px;
+  text-align: left;
 }
 
 
@@ -356,6 +359,7 @@ a:hover {
 ================================================== */
 /* Nav */
 .nav.white  {
+  border-bottom-color: #fff;
   border-bottom-color: rgba(255,255,255,.3);
 }
 .nav.white li a,
@@ -585,102 +589,54 @@ img.right {
 .art-list {
     zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
-.masonry,
-.masonry .masonry-brick {
-  -webkit-transition-duration: 0.7s;
-     -moz-transition-duration: 0.7s;
-       -o-transition-duration: 0.7s;
-          transition-duration: 0.7s;
+
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.95);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
 }
-.masonry {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
+@-webkit-keyframes le-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.masonry .masonry-brick {
-  -webkit-transition-property: left, right, top;
-     -moz-transition-property: left, right, top;
-       -o-transition-property: left, right, top;
-          transition-property: left, right, top;
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(.9);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+}
+@-moz-keyframes le-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-
-
-
-
-/*.art-title {
-   width: 100%;
-   color: transparent !important;
-   text-shadow: 0 0 30px rgba(255,255,255,0.9) !important;
-   -webkit-transition: all .5s ease-in-out;
-      -moz-transition: all .5s ease-in-out;
-           transition: all .5s ease-in-out;
-
+.art-header-inner {
+  -webkit-animation: fade-in .5s 0s 1 ease-out;
+  -moz-animation: fade-in .5s 0s 1 ease-out;
 }
-.done-loading .art-title {
-  color: #fff !important;
-  text-shadow: none !important;
+
+.art-list,
+.nav,
+.abt,
+.art-body {
+  -webkit-animation: le-fade .5s 0s 1 ease-out;
+  -moz-animation: le-fade .5s 0s 1 ease-out;
 }
-*/
-
-
-
-
-
-
-/*
-
-CODING:
-- Make sure the black box doesn't show up on load
-- Consider anytype of animation on load?
-- Browser test across
-  - Chrome
-  - FF8
-  - FF7
-  - FF6
-  - FF5
-  - FF4
-  - FF3.6
-  - IE9
-  - IE8
-  - iPhone 4
-  - iPhone 3
-  - Android
-  - iPad
-
-CONTENT:
-- Fix all image sizes in articles to the new width
-- Fix all image links in the articles
-- Write a post about moving to wordpress
-- Write a post about why a new site
-- Publish video game poster post
-- Write a post about CSS and T1
-- Write email to one person post, cause otherwise it gets lost
-
-
-------------------
-
-
-✔  Code up the about page
-✔  Fix scroll on touch devices to just be normal scrolling
-✔  Refine some of the hover animations
-✔  Make the homepage just show the lastest "full article"
-✔  Make back to top link animated or not change the URL
-✔  Insert favicon
-✔  Make sure I'm minimizing the amount of markup needed (feels like I could use one less div almost everywhere?)
-✔  Cleanup JS
-✔  Clean up markup to adhere to the .art, .art-inner, .art-head/body/footer, .art-head-inner, .art-head-title convention
-✔  Order CSS properties
-✔  Design the about/elsewhere page
-✔  Design some form of personal brand logo or something?
-✔  Create favicon
-✔  Write the about content
-✔  Add all of the summaries to all of the stories
-✔  Make sure all articles have a subheading
-
-
-POSTPONE Scroll iPhone address bar out of the way
-POSTPONE Minify all CSS & JS
-
-*/

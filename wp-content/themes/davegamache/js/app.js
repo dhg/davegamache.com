@@ -1,33 +1,46 @@
+var isMobile;
+
+// Identify if visitor on mobile with lame sniffing to remove parallaxing title
+if( navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/BlackBerry/)
+){
+  isMobile = true;
+}
+
 // Scrolls iPhone and Android out of view after load
-(function( win ){
-  var doc = win.document;
+// if(isMobile) {
+//   (function( win ){
+//     var doc = win.document;
 
-  // If there's a hash, or addEventListener is undefined, stop here
-  if( !location.hash && win.addEventListener ){
-    //scroll to 1
-    window.scrollTo( 0, 1 );
-    var scrollTop = 1,
-      getScrollTop = function(){
-        return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
-      },
-      //reset to 0 on bodyready, if needed
-      bodycheck = setInterval(function(){
-        if( doc.body ){
-          clearInterval( bodycheck );
-          scrollTop = getScrollTop();
-          win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
-        }
-      }, 15 );
-    win.addEventListener( "load", function(){
-      setTimeout(function(){
-          //reset to hide addr bar at onload
-          win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
-      }, 0);
-    } );
-  }
-})( this );
-
-
+//     // If there's a hash, or addEventListener is undefined, stop here
+//     if( !location.hash && win.addEventListener ){
+//       //scroll to 1
+//       window.scrollTo( 0, 1 );
+//       var scrollTop = 1,
+//         getScrollTop = function(){
+//           return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+//         },
+//         //reset to 0 on bodyready, if needed
+//         bodycheck = setInterval(function(){
+//           if( doc.body ){
+//             clearInterval( bodycheck );
+//             scrollTop = getScrollTop();
+//             win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+//           }
+//         }, 15 );
+//       win.addEventListener( "load", function(){
+//         setTimeout(function(){
+//             //reset to hide addr bar at onload
+//             win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+//         }, 0);
+//       } );
+//     }
+//   })( this );
+// }
 
 
 $(document).ready(function() {
@@ -40,22 +53,10 @@ $(document).ready(function() {
   var $artTime = $('.art-time');
   var artTitleFontSize = parseInt($artTitle.css('font-size'));
   var $nav = $('.nav');
-  var isMobile;
   var windowScroll;
 
   // Apply Fittext to article titles to make it scale responsively in a smooth fashion
   $artTitle.fitText(1, { minFontSize: '34px' });
-
-  // Identify if visitor on mobile with lame sniffing to remove parallaxing title
-  if( navigator.userAgent.match(/Android/i) ||
-      navigator.userAgent.match(/webOS/i) ||
-      navigator.userAgent.match(/iPhone/i) ||
-      navigator.userAgent.match(/iPod/i) ||
-      navigator.userAgent.match(/iPad/i) ||
-      navigator.userAgent.match(/BlackBerry/)
-  ){
-    isMobile = true;
-  }
 
   // Identify if visitor has a large enough viewport for parallaxing title
   function isLargeViewport() {
