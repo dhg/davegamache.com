@@ -1,5 +1,5 @@
 <?php
-  query_posts('cat_name=article&showposts=1');
+  query_posts('category_name=article&showposts=1');
   if ( have_posts() ) while ( have_posts() ) : the_post();
   $postMeta = getPostMetadata($post->ID);
   include ("header.php");

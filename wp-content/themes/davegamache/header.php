@@ -15,7 +15,7 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.1.7.1.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fittext.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
   <script type="text/javascript" src="http://use.typekit.com/cjx7kil.js"></script>

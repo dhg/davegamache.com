@@ -8,6 +8,7 @@
           echo " / ";
         } ?>
         <?php echo next_post_link('%link', 'Next'); ?>
+        &nbsp; <!-- here in case there is nothing here to still occupy space -->
       </div>
       <aside class="offsite-links">
         <a class="twitter-link" href="http://www.twitter.com/dhg">Twitter</a> /

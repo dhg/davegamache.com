@@ -6,10 +6,9 @@
 get_header(); ?>
 
 
-
-				<h1 class="page-title"><?php _e( 'Not Found', 'twentyten' ); ?></h1>
-				<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'twentyten' ); ?></p>
-				<?php get_search_form(); ?>
+      <div class="fourohfour">
+				<p>Nope. This page doesn't exist. Sorry!</p>
+      </div>
 
 	<script type="text/javascript">
 		// focus on search field after it has loaded
