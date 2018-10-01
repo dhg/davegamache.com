@@ -10,7 +10,7 @@ get_header(); ?>
 				<p>Nope. This page doesn't exist. Sorry!</p>
       </div>
 
-	<script type="text/javascript">
+	<script>
 		// focus on search field after it has loaded
 		document.getElementById('s') && document.getElementById('s').focus();
 	</script>
